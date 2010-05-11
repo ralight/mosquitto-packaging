@@ -1,0 +1,66 @@
+mosquitto (0.6~rc1-0~ppa1) karmic; urgency=low
+
+  * New release candidate.
+
+ -- Roger A. Light <roger@atchoo.org>  Wed, 05 May 2010 12:14:53 +0100
+
+mosquitto (0.5.4-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Thu, 11 Mar 2010 13:06:24 +0000
+
+mosquitto (0.5.3-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Wed, 03 Mar 2010 21:58:04 +0000
+
+mosquitto (0.5.2-0~ppa2) karmic; urgency=low
+
+  * No longer any need to apply man Makefile patch.
+
+ -- Roger A. Light <roger@atchoo.org>  Tue, 02 Mar 2010 16:31:13 +0000
+
+mosquitto (0.5.2-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Tue, 02 Mar 2010 16:10:50 +0000
+
+mosquitto (0.5-0~ppa2) karmic; urgency=low
+
+  * Remove broken "Recommends"
+
+ -- Roger A. Light <roger@atchoo.org>  Sat, 27 Feb 2010 01:27:29 +0000
+
+mosquitto (0.5-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Sat, 27 Feb 2010 00:00:51 +0000
+
+mosquitto (0.4-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Tue, 05 Jan 2010 22:18:29 +0000
+
+mosquitto (0.3-0~ppa1) karmic; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Thu, 17 Dec 2009 10:57:49 +0000
+
+mosquitto (0.2-0~ppa1) karmic; urgency=low
+
+  * New release.
+  * Set daemon properties with defaults file now this is possible.
+
+ -- Roger A. Light <roger@atchoo.org>  Fri, 04 Dec 2009 18:31:51 +0000
+
+mosquitto (0.1-0~ppa1) karmic; urgency=low
+
+  * Initial release
+
+ -- Roger A. Light <roger@atchoo.org>  Thu, 03 Dec 2009 12:35:36 +0000

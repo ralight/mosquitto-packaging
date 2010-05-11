@@ -1,0 +1,17 @@
+Source: mosquitto
+Section: net
+Priority: optional
+Maintainer: Roger Light <roger@atchoo.org>
+Build-Depends: debhelper (>= 7), libsqlite3-dev (>= 3.6.14.1), libwrap0-dev, quilt
+Standards-Version: 3.8.3
+Homepage: http://mosquitto.atchoo.org/
+
+Package: mosquitto
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sqlite3-pcre (< 0)
+Description: MQTT version 3 compatible message broker
+ This is a message broker that supports version 3 of the MQ Telemetry Transport
+ protocol. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+ This package also contains mosquitto_pub and mosquitto_sub, which are simple
+ command line clients that can be used with mosquitto or other MQTT brokers.
