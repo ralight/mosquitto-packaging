@@ -13,7 +13,7 @@ URL:		http://mosquitto.atchoo.org
 Source:		mosquitto-%{version}.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 Requires:	sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
-BuildRequires:	tcp_wrappers-devel, sqlite-devel,docbook2X
+BuildRequires:	tcp_wrappers-devel, sqlite-devel
 
 
 %description
@@ -29,7 +29,7 @@ awk '$1~/^\#persistence$/{print "persistence 1";next}
 	{print $0}' mosquitto.conf > mosquitto.conf.tmp
 mv mosquitto.conf.tmp mosquitto.conf
 
-make DOCBOOK2MAN=db2x_docbook2man
+make
 
 
 %install
