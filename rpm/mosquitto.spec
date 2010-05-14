@@ -18,6 +18,21 @@ Requires:  sqlite3 >= 3.6.14.1, tcpd, sqlite3-pcre
 BuildRequires:  sqlite3-devel, tcpd-devel
 %endif
 
+%if %{defined sles_version}
+Requires:   sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
+BuildRequires:  tcp_wrappers-devel, sqlite-devel
+%endif
+
+%if %{defined rhel_version}
+Requires:   sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
+BuildRequires:  tcp_wrappers-devel, sqlite-devel
+%endif
+
+%if %{defined centos_version}
+Requires:   sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
+BuildRequires:  tcp_wrappers-devel, sqlite-devel
+%endif
+
 %if %{defined fedora_version}
 Requires:   sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
 BuildRequires:  tcp_wrappers-devel, sqlite-devel
