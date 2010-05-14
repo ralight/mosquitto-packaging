@@ -12,9 +12,21 @@ License:	BSD
 URL:		http://mosquitto.atchoo.org
 Source:		mosquitto-%{version}.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
-Requires:	sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
-BuildRequires:	tcp_wrappers-devel, sqlite-devel
 
+%if %{defined suse_version}
+Requires:  sqlite3 >= 3.6.14.1, tcpd, sqlite3-pcre
+BuildRequires:  sqlite3-devel, tcpd-devel
+%endif
+
+%if %{defined fedora_version}
+Requires:   sqlite >= 3.6.14.1, tcp_wrappers, sqlite3-pcre
+BuildRequires:  tcp_wrappers-devel, sqlite-devel
+%endif
+
+%if %{defined mdkversion}
+Requires:  libsqlite3 >= 3.6.14.1, libwrap0, sqlite3-pcre
+BuildRequires:  libsqlite3-devel, libwrap-devel
+%endif
 
 %description
 Mosquitto is a message broker that implements the MQ Telemetry Transport protocol version 3. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. Probably the most famous example of this is all of the work that Andy Stanford-Clark (one of the originators of MQTT) has done in home monitoring and automation with his twittering house and twittering ferry (but it's not all about twitter!). 
