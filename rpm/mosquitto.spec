@@ -66,7 +66,7 @@ make install DESTDIR=$RPM_BUILD_ROOT prefix=/usr
 rm -rf $RPM_BUILD_ROOT
 
 %post
-id mosquitto 2>&1 >/dev/null || useradd -k /dev/null -r -m -d /var/lib/mosquitto/  mosquitto
+id mosquitto 2>&1 >/dev/null || useradd -k /dev/null -r -m -d /var/lib/mosquitto/ -s /sbin/nologin  mosquitto
 
 %postun
 if [ $1 eq 0 ]
