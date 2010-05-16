@@ -5,7 +5,7 @@
 Name:		mosquitto
 Version:	%{version}
 Release:	%{release}%{?dist}
-Summary:	A message broker implementing the MQTT protocol version 3.
+Summary:	MQTT version 3 compatible message broker
 
 Group:		Development/Tools
 License:	BSD
@@ -39,7 +39,11 @@ BuildRequires:  libsqlite3-devel, libwrap-devel
 %endif
 
 %description
-Mosquitto is a message broker that implements the MQ Telemetry Transport protocol version 3. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. Probably the most famous example of this is all of the work that Andy Stanford-Clark (one of the originators of MQTT) has done in home monitoring and automation with his twittering house and twittering ferry (but it's not all about twitter!). 
+A message broker that supports version 3 of the MQ Telemetry Transport
+protocol. MQTT provides a lightweight method of carrying out messaging using a
+publish/subscribe model.
+This package also contains mosquitto_pub and mosquitto_sub, which are simple
+command line clients that can be used with mosquitto or other MQTT brokers
 
 %prep
 %setup -q
