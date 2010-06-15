@@ -9,7 +9,7 @@ Summary:	MQTT version 3 compatible message broker
 
 Group:		Development/Tools
 License:	BSD
-URL:		http://mosquitto.atchoo.org
+URL:		http://mosquitto.org
 Source:		mosquitto-%{version}.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
