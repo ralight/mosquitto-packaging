@@ -1,6 +1,6 @@
 ##release is the version number of the spec file
-%define release 2
-%define version 0.6.1
+%define release 1
+%define version 0.7
 
 Name:		mosquitto
 Version:	%{version}
