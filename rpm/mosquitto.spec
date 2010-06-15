@@ -1,17 +1,24 @@
 ##release is the version number of the spec file
 %define release 1
-%define version 0.7
+%define def_version 0.7
 
 Name:		mosquitto
-Version:	%{version}
 Release:	%{release}%{?dist}
 Summary:	MQTT version 3 compatible message broker
 
 Group:		Development/Tools
 License:	BSD
 URL:		http://mosquitto.org
+
+%if %{defined version}
+Version:	%{version}
 Source:		mosquitto-%{version}.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+%else
+Version:	%{def_version}
+Source:		mosquitto-%{def_version}.tar.gz	
+BuildRoot:	%{_tmppath}/%{name}-%{def_version}-%{release}
+%endif
 
 %if %{defined suse_version}
 Requires:  sqlite3 >= 3.6.14.1, tcpd, sqlite3-pcre
