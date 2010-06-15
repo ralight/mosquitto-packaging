@@ -62,6 +62,8 @@ make
 rm -rf $RPM_BUILD_ROOT
 mkdir $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT prefix=/usr
+install -d $RPM_BUILD_ROOT/etc/event.d
+cp service/upstart/mosquitto.conf $RPM_BUILD_ROOT/etc/event.d/mosquitto
 #chcon -t textrel_shlib_t '/usr/lib/sqlite3/pcre.so'
 #semanage fcontext -a -t textrel_shlib_t '/usr/lib/sqlite3/pcre.so'
 
@@ -84,6 +86,7 @@ fi
 %config /etc/mosquitto.conf
 /usr/bin/mosquitto_pub
 /usr/bin/mosquitto_sub
+/etc/event.d/mosquitto
 %doc /usr/share/man/man1/mosquitto_pub.1.gz
 %doc /usr/share/man/man1/mosquitto_sub.1.gz
 %doc /usr/share/man/man5/mosquitto.conf.5.gz
