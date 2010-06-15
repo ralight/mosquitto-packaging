@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 id mosquitto 2>&1 >/dev/null || useradd -k /dev/null -r -m -d /var/lib/mosquitto/ -s /sbin/nologin  mosquitto
 
 %postun
-if [ $1 eq 0 ]
+if [ $1 -eq 0 ]
 then
 	userdel -r mosquitto
 fi
