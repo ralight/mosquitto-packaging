@@ -16,7 +16,7 @@ Index: mosquitto-0.6~rc1/config.mk
 @@ -4,7 +4,7 @@
  #MANCOUNTRIES=en_GB
  
- CFLAGS=-I. -I.. -ggdb -Wall -O2
+ CFLAGS=-I. -I.. -ggdb -Wall -O2 -I../lib
 -LDFLAGS=-lsqlite3
 +LDFLAGS=-lsqlite3 -lwrap
  # Add -lwrap to LDFLAGS if compiling with tcp wrappers support.

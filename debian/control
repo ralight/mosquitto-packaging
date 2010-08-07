@@ -8,10 +8,41 @@ Homepage: http://mosquitto.atchoo.org/
 
 Package: mosquitto
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sqlite3-pcre (< 0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sqlite3-pcre
+Recommends: mosquitto-pub, mosquitto-sub
 Description: MQTT version 3 compatible message broker
  This is a message broker that supports version 3 of the MQ Telemetry Transport
  protocol. MQTT provides a lightweight method of carrying out messaging using a
  publish/subscribe model.
- This package also contains mosquitto_pub and mosquitto_sub, which are simple
- command line clients that can be used with mosquitto or other MQTT brokers.
+
+Package: libmosquitto0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MQTT version 3 client library
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquittopp0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MQTT version 3 client C++ library
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: mosquitto-pub
+Architecture: any
+Recommends: mosquitto, mosquitto-sub
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
+Description: MQTT version 3 publish client
+ This is an MQTT version 3 client that can publish messages to a broker.
+
+Package: mosquitto-sub
+Architecture: any
+Recommends: mosquitto-pub, mosquitto
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
+Description: MQTT version 3 subscribe client
+ This is an MQTT version 3 client that can subscribe to multiple topics on a
+ broker.
+

@@ -1,3 +1,9 @@
+mosquitto (0.8pre-0~ppa1) lucid; urgency=low
+
+  * Test
+
+ -- Roger A. Light <roger@atchoo.org>  Sat, 07 Aug 2010 17:18:29 +0100
+
 mosquitto (0.6~rc1-0~ppa1) karmic; urgency=low
 
   * New release candidate.
