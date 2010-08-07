@@ -1,6 +1,6 @@
 ##release is the version number of the spec file
 %define release 1
-%define def_version 0.7
+%define def_version 0.8
 
 Name:		mosquitto
 Release:	%{release}%{?dist}
@@ -93,9 +93,16 @@ fi
 %config /etc/mosquitto.conf
 /usr/bin/mosquitto_pub
 /usr/bin/mosquitto_sub
+${_libdir}/libmosquitto.so.0
+${_libdir}/libmosquitto.so
+${_libdir}/libmosquittopp.so.0
+${_libdir}/libmosquittopp.so
+/usr/include/mosquitto.h
+/usr/include/mosquittopp.h
 /etc/event.d/mosquitto
 %doc /usr/share/man/man1/mosquitto_pub.1.gz
 %doc /usr/share/man/man1/mosquitto_sub.1.gz
+%doc /usr/share/man/man3/libmosquitto.3.gz
 %doc /usr/share/man/man5/mosquitto.conf.5.gz
 %doc /usr/share/man/man7/mqtt.7.gz
 %doc /usr/share/man/man8/mosquitto.8.gz
