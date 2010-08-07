@@ -23,10 +23,26 @@ Description: MQTT version 3 client library
  clients. MQTT provides a lightweight method of carrying out messaging using a
  publish/subscribe model.
 
+Package: libmosquitto0-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
+Description: MQTT version 3 client library, development files
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
 Package: libmosquittopp0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
 Description: MQTT version 3 client C++ library
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquittopp0-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquittopp0
+Description: MQTT version 3 client C++ library, development files
  This is a library that provides a means of implementing MQTT version 3
  clients. MQTT provides a lightweight method of carrying out messaging using a
  publish/subscribe model.
