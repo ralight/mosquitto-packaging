@@ -2,7 +2,7 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libsqlite3-dev (>= 3.6.14.1), libwrap0-dev, quilt
+Build-Depends: debhelper (>= 7), libsqlite3-dev (>= 3.6.14.1), libwrap0-dev, quilt (>= 0.46-7~)
 Standards-Version: 3.8.3
 Homepage: http://mosquitto.atchoo.org/
 
@@ -24,8 +24,9 @@ Description: MQTT version 3 client library
  publish/subscribe model.
 
 Package: libmosquitto0-dev
+Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3 client library, development files
  This is a library that provides a means of implementing MQTT version 3
  clients. MQTT provides a lightweight method of carrying out messaging using a
@@ -33,32 +34,26 @@ Description: MQTT version 3 client library, development files
 
 Package: libmosquittopp0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3 client C++ library
  This is a library that provides a means of implementing MQTT version 3
  clients. MQTT provides a lightweight method of carrying out messaging using a
  publish/subscribe model.
 
 Package: libmosquittopp0-dev
+Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquittopp0
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
 Description: MQTT version 3 client C++ library, development files
  This is a library that provides a means of implementing MQTT version 3
  clients. MQTT provides a lightweight method of carrying out messaging using a
  publish/subscribe model.
 
-Package: mosquitto-pub
+Package: mosquitto-clients
 Architecture: any
-Recommends: mosquitto, mosquitto-sub
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
-Description: MQTT version 3 publish client
- This is an MQTT version 3 client that can publish messages to a broker.
-
-Package: mosquitto-sub
-Architecture: any
-Recommends: mosquitto-pub, mosquitto
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0
-Description: MQTT version 3 subscribe client
- This is an MQTT version 3 client that can subscribe to multiple topics on a
- broker.
+Recommends: mosquitto
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Description: MQTT version 3 clients
+ This is two MQTT version 3 clients. The first can publish messages to a broker,
+ the second can subscribe to multiple topics on a broker.
 
