@@ -9,7 +9,7 @@ Homepage: http://mosquitto.org/
 Package: mosquitto
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sqlite3-pcre
-Recommends: mosquitto-pub, mosquitto-sub
+Recommends: mosquitto-clients
 Description: MQTT version 3 compatible message broker
  This is a message broker that supports version 3 of the MQ Telemetry Transport
  protocol. MQTT provides a lightweight method of carrying out messaging using a
