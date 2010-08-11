@@ -60,7 +60,7 @@ Description: MQTT version 3 clients
 Package: libmosquitto0-python
 Section: python
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3 client library, python bindings
  This is a library that provides a means of implementing MQTT version 3
  clients. MQTT provides a lightweight method of carrying out messaging using a
