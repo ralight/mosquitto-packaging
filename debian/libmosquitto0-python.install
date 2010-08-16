@@ -1,5 +1,2 @@
-usr/lib/python*/dist-packages/mosquitto.py*
-usr/lib/python*/dist-packages/mosquitto-*.egg-info
-usr/lib/python*/site-packages/mosquitto.py*
-usr/lib/python*/site-packages/mosquitto-*.egg-info
-
+usr/lib/python*/*-packages/mosquitto.py*
+usr/lib/python*/*-packages/mosquitto-*.egg-info
