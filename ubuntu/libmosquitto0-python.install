@@ -1,0 +1,2 @@
+usr/lib/python*/*-packages/mosquitto.py*
+usr/lib/python*/*-packages/mosquitto-*.egg-info

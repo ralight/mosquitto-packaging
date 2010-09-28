@@ -1,0 +1,25 @@
+Index: mosquitto-0.6~rc1/client/Makefile
+===================================================================
+--- mosquitto-0.6~rc1.orig/client/Makefile	2010-05-05 12:45:54.850806290 +0100
++++ mosquitto-0.6~rc1/client/Makefile	2010-05-05 12:46:00.234822629 +0100
+@@ -3,7 +3,7 @@
+ LDFLAGS=-lsqlite3
+ OBJS=client_shared.o context.o database.o logging.o memory.o net.o raw_send.o raw_send_client.o read_handle.o read_handle_client.o util.o
+ INSTALL=install
+-prefix=/usr/local
++prefix=/usr
+ 
+ .PHONY: all install uninstall clean
+ 
+Index: mosquitto-0.6~rc1/config.mk
+===================================================================
+--- mosquitto-0.6~rc1.orig/config.mk	2010-05-05 12:45:46.170806367 +0100
++++ mosquitto-0.6~rc1/config.mk	2010-05-05 12:45:49.902842527 +0100
+@@ -14,6 +14,6 @@
+ MSGFMT=msgfmt
+ DOCBOOK2MAN=docbook2man.pl
+ 
+-prefix=/usr/local
++prefix=/usr
+ mandir=${prefix}/share/man
+ localedir=${prefix}/share/locale

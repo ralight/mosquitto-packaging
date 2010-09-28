@@ -1,0 +1,68 @@
+Source: mosquitto
+Section: net
+Priority: optional
+Maintainer: Roger Light <roger@atchoo.org>
+Build-Depends: debhelper (>= 7), libsqlite3-dev (>= 3.6.14.1), libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
+Standards-Version: 3.8.3
+Homepage: http://mosquitto.org/
+
+Package: mosquitto
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sqlite3-pcre
+Recommends: mosquitto-clients
+Description: MQTT version 3 compatible message broker
+ This is a message broker that supports version 3 of the MQ Telemetry Transport
+ protocol. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquitto0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: MQTT version 3 client library
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquitto0-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Description: MQTT version 3 client library, development files
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquittopp0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Description: MQTT version 3 client C++ library
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: libmosquittopp0-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
+Description: MQTT version 3 client C++ library, development files
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+
+Package: mosquitto-clients
+Architecture: any
+Recommends: mosquitto
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Description: MQTT version 3 clients
+ This is two MQTT version 3 clients. The first can publish messages to a broker,
+ the second can subscribe to multiple topics on a broker.
+
+Package: libmosquitto0-python
+Section: python
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
+Description: MQTT version 3 client library, python bindings
+ This is a library that provides a means of implementing MQTT version 3
+ clients. MQTT provides a lightweight method of carrying out messaging using a
+ publish/subscribe model.
+

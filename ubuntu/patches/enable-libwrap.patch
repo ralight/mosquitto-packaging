@@ -1,0 +1,24 @@
+Index: mosquitto-0.6~rc1/config.h
+===================================================================
+--- mosquitto-0.6~rc1.orig/config.h	2010-05-05 12:46:47.650802408 +0100
++++ mosquitto-0.6~rc1/config.h	2010-05-05 12:46:50.226823230 +0100
+@@ -1,5 +1,5 @@
+ /* Uncomment to compile with tcpd/libwrap support. */
+-//#define WITH_WRAP
++#define WITH_WRAP
+ 
+ /* Compile with regex topic matching support?  If disabled, wildcard topic
+  * matching won't be possible.
+Index: mosquitto-0.6~rc1/config.mk
+===================================================================
+--- mosquitto-0.6~rc1.orig/config.mk	2010-05-05 12:46:36.622810910 +0100
++++ mosquitto-0.6~rc1/config.mk	2010-05-05 12:46:41.890820619 +0100
+@@ -4,7 +4,7 @@
+ #MANCOUNTRIES=en_GB
+ 
+ CFLAGS=-I. -I.. -ggdb -Wall -O2 -I../lib
+-LDFLAGS=-lsqlite3
++LDFLAGS=-lsqlite3 -lwrap
+ # Add -lwrap to LDFLAGS if compiling with tcp wrappers support.
+ 
+ CC=gcc

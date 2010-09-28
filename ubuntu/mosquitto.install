@@ -1,0 +1,5 @@
+usr/sbin/mosquitto
+etc/mosquitto.conf
+usr/share/man/man8/mosquitto.8
+usr/share/man/man5/mosquitto.conf.5
+usr/share/man/man7/mqtt.7
