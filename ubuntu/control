@@ -57,7 +57,7 @@ Description: MQTT version 3 clients
  This is two MQTT version 3 clients. The first can publish messages to a broker,
  the second can subscribe to multiple topics on a broker.
 
-Package: libmosquitto0-python
+Package: python-mosquitto
 Section: python
 Architecture: any
 Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
