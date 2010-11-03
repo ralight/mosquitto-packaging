@@ -2,7 +2,7 @@ Index: mosquitto-0.6~rc1/mosquitto.conf
 ===================================================================
 --- mosquitto-0.6~rc1.orig/mosquitto.conf	2010-05-05 12:49:15.254808350 +0100
 +++ mosquitto-0.6~rc1/mosquitto.conf	2010-05-05 12:50:47.270818082 +0100
-@@ -63,7 +63,7 @@
+@@ -93,7 +93,7 @@
  # Save persistent message data to disk (1/0).
  # This saves information about all messages, including subscriptions,
  # currently in-flight messages and retained messages.
@@ -11,7 +11,7 @@ Index: mosquitto-0.6~rc1/mosquitto.conf
  
  # The filename to use for the persistent database, not including the path.
  #persistence_file mosquitto.db
-@@ -71,7 +71,7 @@
+@@ -101,7 +101,7 @@
  # Location for persistent database. Must include trailing /
  # Default is an empty string (current directory).
  # Set to /var/lib/mosquitto/ if running as a proper service.
@@ -20,7 +20,7 @@ Index: mosquitto-0.6~rc1/mosquitto.conf
  
  # ======================================================================
  # Logging
-@@ -88,6 +88,8 @@
+@@ -117,6 +117,8 @@
  # information.
  # Use "log_dest none" if you wish to disable logging.
  #log_dest stderr
@@ -29,12 +29,3 @@ Index: mosquitto-0.6~rc1/mosquitto.conf
  
  # Types of messages to log. Use multiple log_type lines for logging
  # multiple types of messages.
-@@ -125,7 +127,7 @@
- # Default on Windows/Cygwin:
- #ext_sqlite_regex ./sqlite3-pcre.dll
- # Default on other platforms:
--#ext_sqlite_regex /usr/lib/sqlite3/pcre.so
-+ext_sqlite_regex /usr/lib/sqlite3/pcre.so
- 
- # ======================================================================
- # Unsupported rsmb options
