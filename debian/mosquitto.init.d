@@ -29,7 +29,7 @@ export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
 case "$1" in
   start)
 	log_daemon_msg "Starting Mosquitto message broker" "mosquitto"
-	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto.conf ; then
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
 	    log_end_msg 1
@@ -49,7 +49,7 @@ case "$1" in
 	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/mosquitto.pid
 	check_for_no_start log_end_msg
 	check_dev_null log_end_msg
-	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto.conf ; then
+	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
 	    log_end_msg 1
@@ -67,7 +67,7 @@ case "$1" in
 		# old daemon stopped
 		check_for_no_start log_end_msg
 		check_dev_null log_end_msg
-		if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto.conf ; then
+		if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
 		    log_end_msg 0
 		else
 		    log_end_msg 1

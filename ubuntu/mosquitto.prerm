@@ -7,11 +7,13 @@ set -e
 
 case "$1" in
 	remove|purge|deconfigure)
+		dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
 #	initctl stop mosquitto
 	echo -n
 	;;
 
 	upgrade)
+		dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
 	;;
 	failed-upgrade)
 	;;

@@ -2,7 +2,7 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
+Build-Depends: debhelper (>= 7), dpkg (>= 1.15.7.2) libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
 Standards-Version: 3.8.3
 Homepage: http://mosquitto.org/
 
