@@ -19,6 +19,7 @@ case "$1" in
 	configure)
 		setup_mosquitto_user
 		fix_permissions
+		dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)

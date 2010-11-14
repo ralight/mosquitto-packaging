@@ -1,6 +1,6 @@
 ##release is the version number of the spec file
 %define release 1
-%define def_version 0.9
+%define def_version 0.9test3
 
 Name:		mosquitto
 Release:	%{release}%{?dist}
@@ -18,35 +18,35 @@ URL:		http://mosquitto.org
 
 %if %{defined version}
 Version:	%{version}
-Source:		mosquitto-%{version}.tar.gz	
+Source:		mosquitto-0.9test3.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 %else
 Version:	%{def_version}
-Source:		mosquitto-%{def_version}.tar.gz	
+Source:		mosquitto-0.9test3.tar.gz	
 BuildRoot:	%{_tmppath}/%{name}-%{def_version}-%{release}
 %endif
 
 %if %{defined suse_version}
-Requires:  sqlite3, tcpd
-BuildRequires:  sqlite3-devel, tcpd-devel, gcc-c++, python
+Requires:  sqlite3 >= 3.5, tcpd
+BuildRequires:  sqlite3-devel >= 3.5, tcpd-devel, gcc-c++, python, pwdutils
 %endif
 
 %if %{defined rhel_version}
-BuildRequires:  tcp_wrappers, sqlite >= 3, gcc-c++, python
+BuildRequires:  tcp_wrappers, gcc-c++, python
 %endif
 
 %if %{defined centos_version}
-BuildRequires:  tcp_wrappers, sqlite >= 3, gcc-c++, python
+BuildRequires:  tcp_wrappers, gcc-c++, python
 %endif
 
 %if %{defined fedora_version}
-Requires:   sqlite >= 3, tcp_wrappers
-BuildRequires:  tcp_wrappers-devel, sqlite-devel, gcc-c++, python, python-devel
+Requires:   sqlite >= 3.5, tcp_wrappers
+BuildRequires:  tcp_wrappers-devel, sqlite-devel >= 3.5, gcc-c++, python, python-devel
 %endif
 
 %if %{defined mdkversion}
-Requires:  libsqlite3, libwrap0
-BuildRequires:  libsqlite3-devel, libwrap-devel, gcc-c++, python, python-devel
+Requires:  libsqlite3 >= 3.5, libwrap0
+BuildRequires:  libsqlite3-devel >= 3.5, libwrap-devel, gcc-c++, python, python-devel
 %endif
 
 %description
@@ -120,13 +120,12 @@ awk '$1~/^\#persistence$/{print "persistence 1";next}
 	$1~/^\#persistence_location$/{print "persistence_location /var/lib/mosquitto/";;next}
 	{print $0}' mosquitto.conf > mosquitto.conf.tmp
 mv mosquitto.conf.tmp mosquitto.conf
-%if 0%{?suse_version}<1130 && %{undefined fedora_version}
-sed -i 's/DIRS=lib client src man/DIRS=lib client man/' Makefile
-sed -i '/mosquitto.conf/d' Makefile
-sed -i '/man8/d' man/Makefile
-sed -i '/man7/d' man/Makefile
-sed -i '/man5/d' man/Makefile
+%if %{defined rhel_version} || %{defined centos_version}
+sed -i 's/LDFLAGS=-lsqlite3/LDFLAGS=/' config.mk
+sed -i 's/#define WITH_SQLITE_UPGRADE/\/\/#define WITH_SQLITE_UPGRADE/' config.h
+sed -i 's!//#define WITH_32BIT_DBID!#define WITH_32BIT_DBID/' config.h
 %endif
+
 make
 
 
@@ -147,6 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 id mosquitto 2>&1 >/dev/null || useradd -k /dev/null -r -m -d /var/lib/mosquitto/ -s /sbin/nologin  mosquitto
+exit 0 # force success for Suse distros that fail to copy /dev/null as skel
 
 %postun
 if [ $1 -eq 0 ]
@@ -169,7 +169,7 @@ fi
 %files
 %defattr(-,root,root,-)
 /usr/sbin/mosquitto
-%config /etc/mosquitto.conf
+%config /etc/mosquitto/mosquitto.conf
 %if %{defined fedora_version}
 /etc/event.d/mosquitto
 %endif
@@ -204,7 +204,7 @@ fi
 %files -n python-mosquitto
 %defattr(-,root,root,-)
 %if %{undefined rhel_version} && %{undefined centos_version}
-/usr/lib*/python*/site-packages/mosquitto-0.8*.egg-info
+/usr/lib*/python*/site-packages/mosquitto-0.9*.egg-info
 %endif
 /usr/lib*/python*/site-packages/mosquitto.py*
 
