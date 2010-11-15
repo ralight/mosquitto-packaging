@@ -19,7 +19,9 @@ case "$1" in
 	configure)
 		setup_mosquitto_user
 		fix_permissions
-		dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
+		if dpkg-maintscript-helper supports mv_conffile 2>/dev/null; then
+			dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
+		fi
 	;;
 
 	abort-upgrade|abort-remove|abort-deconfigure)
