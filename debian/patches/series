@@ -1,3 +1,5 @@
-enable-libwrap.patch
+libwrap-inc.patch
 fix-prefix.patch
+enable-libwrap.patch
 mosquitto.conf.patch
+disable-cmake.patch
