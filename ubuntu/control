@@ -2,8 +2,8 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), dpkg (>= 1.15.7.2) libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7), dpkg (>= 1.15.7.2), libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
+Standards-Version: 3.9.1
 Homepage: http://mosquitto.org/
 
 Package: mosquitto
@@ -26,7 +26,7 @@ Description: MQTT version 3.1 client library
 Package: libmosquitto0-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Depends: ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3.1 client library, development files
  This is a library that provides a means of implementing MQTT version 3.1
  clients. MQTT provides a lightweight method of carrying out messaging using a
@@ -43,7 +43,7 @@ Description: MQTT version 3.1 client C++ library
 Package: libmosquittopp0-dev
 Section: libdevel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
+Depends: ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
 Description: MQTT version 3.1 client C++ library, development files
  This is a library that provides a means of implementing MQTT version 3.1
  clients. MQTT provides a lightweight method of carrying out messaging using a
@@ -54,8 +54,8 @@ Architecture: any
 Recommends: mosquitto
 Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3.1 clients
- This is two MQTT version 3.1 clients. The first can publish messages to a broker,
- the second can subscribe to multiple topics on a broker.
+ This is two MQTT version 3.1 clients. The first can publish messages to a
+ broker, the second can subscribe to multiple topics on a broker.
 
 Package: python-mosquitto
 Section: python

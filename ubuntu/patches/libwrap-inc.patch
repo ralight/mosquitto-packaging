@@ -1,0 +1,12 @@
+Index: mosquitto-0.9/src/mosquitto.c
+===================================================================
+--- mosquitto-0.9.orig/src/mosquitto.c	2010-11-14 23:58:32.756854001 +0000
++++ mosquitto-0.9/src/mosquitto.c	2010-11-14 23:58:42.180854001 +0000
+@@ -53,6 +53,7 @@
+ 
+ static int run;
+ #ifdef WITH_WRAP
++#include <syslog.h>
+ int allow_severity = LOG_INFO;
+ int deny_severity = LOG_INFO;
+ #endif
