@@ -7,7 +7,9 @@ set -e
 
 case "$1" in
 	purge)
-		dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
+		if dpkg-maintscript-helper supports mv_conffile 2>/dev/null; then
+			dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
+		fi
 		rm -f /var/lib/mosquitto/mosquitto.db
 		if [ -d /var/lib/mosquitto ]; then
 			rmdir --ignore-fail-on-non-empty /var/lib/mosquitto
@@ -21,6 +23,9 @@ case "$1" in
 	;;
 
 	upgrade|failed-upgrade)
+		if dpkg-maintscript-helper supports mv_conffile 2>/dev/null; then
+			dpkg-maintscript-helper mv_conffile /etc/mosquitto.conf /etc/mosquitto/mosquitto.conf 0.8.3 -- "$@"
+		fi
 	;;
 
 	*)

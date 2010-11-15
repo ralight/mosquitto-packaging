@@ -1,3 +1,21 @@
+mosquitto (0.9-0~ppa3) karmic; urgency=low
+
+  * Remove CMakeLists.txt to avoid auto building with cmake.
+
+ -- Roger A. Light <roger@atchoo.org>  Mon, 15 Nov 2010 08:24:27 +0000
+
+mosquitto (0.9-0~ppa2) karmic; urgency=low
+
+  * Remove versioned dpkg dep for <Maverick.
+
+ -- Roger A. Light <roger@atchoo.org>  Mon, 15 Nov 2010 07:57:55 +0000
+
+mosquitto (0.9-0~ppa1) lucid; urgency=low
+
+  * New release.
+
+ -- Roger A. Light <roger@atchoo.org>  Sun, 14 Nov 2010 23:39:46 +0000
+
 mosquitto (0.8pre-0~ppa1) lucid; urgency=low
 
   * Test
