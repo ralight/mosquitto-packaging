@@ -1,21 +1,21 @@
-Index: mosquitto-0.6~rc1/client/Makefile
+Index: mosquitto-0.9/client/Makefile
 ===================================================================
---- mosquitto-0.6~rc1.orig/client/Makefile	2010-05-05 12:45:54.850806290 +0100
-+++ mosquitto-0.6~rc1/client/Makefile	2010-05-05 12:46:00.234822629 +0100
-@@ -3,7 +3,7 @@
- LDFLAGS=-lsqlite3
- OBJS=client_shared.o context.o database.o logging.o memory.o net.o raw_send.o raw_send_client.o read_handle.o read_handle_client.o util.o
+--- mosquitto-0.9.orig/client/Makefile	2010-11-14 23:53:49.528854000 +0000
++++ mosquitto-0.9/client/Makefile	2010-11-14 23:53:53.992854002 +0000
+@@ -2,7 +2,7 @@
+ CFLAGS=-I../lib -Wall -ggdb
+ LDFLAGS=-L../lib ../lib/libmosquitto.so.0
  INSTALL=install
 -prefix=/usr/local
 +prefix=/usr
  
  .PHONY: all install uninstall clean
  
-Index: mosquitto-0.6~rc1/config.mk
+Index: mosquitto-0.9/config.mk
 ===================================================================
---- mosquitto-0.6~rc1.orig/config.mk	2010-05-05 12:45:46.170806367 +0100
-+++ mosquitto-0.6~rc1/config.mk	2010-05-05 12:45:49.902842527 +0100
-@@ -14,6 +14,6 @@
+--- mosquitto-0.9.orig/config.mk	2010-11-14 23:54:00.888854001 +0000
++++ mosquitto-0.9/config.mk	2010-11-14 23:54:06.788854000 +0000
+@@ -15,6 +15,6 @@
  MSGFMT=msgfmt
  DOCBOOK2MAN=docbook2man.pl
  
