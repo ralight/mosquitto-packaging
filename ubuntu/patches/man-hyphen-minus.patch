@@ -1,0 +1,183 @@
+Description: Fix hyphen-used-as-minus-sign in man page.
+Author: Roger Light <roger@atchoo.org>
+Index: mosquitto-0.9/man/mosquitto.conf.5
+===================================================================
+--- mosquitto-0.9.orig/man/mosquitto.conf.5	2010-11-27 06:04:23.000000000 +0000
++++ mosquitto-0.9/man/mosquitto.conf.5	2010-11-27 06:04:31.000000000 +0000
+@@ -80,7 +80,7 @@
+ .TP 
+ \*(T<\fBmax_connections\fR\*(T>
+ Limit the total number of clients connected. Set to
+--1 to have "unlimited" connections. Note that other limits
++\-1 to have "unlimited" connections. Note that other limits
+ may be imposed that are outside the control of mosquitto.
+ See e.g. \fBlimits.conf\fR(5).
+ .TP 
+Index: mosquitto-0.9/man/mosquitto_pub.1
+===================================================================
+--- mosquitto-0.9.orig/man/mosquitto_pub.1	2010-11-29 22:44:16.225538001 +0000
++++ mosquitto-0.9/man/mosquitto_pub.1	2010-11-29 22:47:08.381538001 +0000
+@@ -59,7 +59,7 @@
+ Provide a password to be used for authenticating with
+ the broker. Using this argument without also specifying a
+ username is invalid. This requires a broker that supports
+-MQTT v3.1. See also the --username option.
++MQTT v3.1. See also the \-\-username option.
+ .TP 
+ \*(T<\fB\-q\fR\*(T>, \*(T<\fB\-\-qos\fR\*(T>
+ Specify the quality of service to use for the message, from 0, 1 and 2. Defaults to 0.
+@@ -76,21 +76,21 @@
+ \*(T<\fB\-u\fR\*(T>, \*(T<\fB\-\-username\fR\*(T>
+ Provide a username to be used for authenticating with
+ the broker. This requires a broker that supports MQTT v3.1.
+-See also the --pw argument.
++See also the \-\-pw argument.
+ .TP 
+ \*(T<\fB\-\-will\-payload\fR\*(T>
+ Specify a message that will be stored by the broker
+ and sent out if this client disconnects unexpectedly. This
+-must be used in conjunction with --will-topic.
++must be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-qos\fR\*(T>
+ The QoS to use for the Will. Defaults to 0. This must
+-be used in conjunction with --will-topic.
++be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-retain\fR\*(T>
+ If given, if the client disconnects unexpectedly the
+ message sent out will be treated as a retained message.
+-This must be used in conjunction with --will-topic.
++This must be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-topic\fR\*(T>
+ The topic on which to send a Will, in the event that
+@@ -101,40 +101,40 @@
+ \fBmqtt\fR(7)
+ for more information.
+ .PP
+-The minimum requirement for this is to use --will-topic to
++The minimum requirement for this is to use \-\-will\-topic to
+ specify which topic the will should be sent out on. This will result in
+ a non-retained, zero length message with QoS 0.
+ .PP
+-Use the --will-retain, -will-payload and --will-qos arguments to
++Use the \-\-will\-retain, \-\-will\-payload and \-\-will\-qos arguments to
+ modify the other will parameters.
+ .SH EXAMPLES
+ Publish temperature information to localhost with QoS 1:
+ .TP 0.2i
+ \(bu
+-mosquitto_pub -t sensors/temperature -m 32 -q 1
++mosquitto_pub \-t sensors/temperature \-m 32 \-q 1
+ .PP
+ Publish timestamp and temperature information to a remote host on a non-standard port and QoS 0:
+ .TP 0.2i
+ \(bu
+-mosquitto_pub -h 192.168.1.1 -p 1885 -t sensors/temperature -m "1266193804 32"
++mosquitto_pub \-h 192.168.1.1 \-p 1885 \-t sensors/temperature \-m "1266193804 32"
+ .PP
+ Publish light switch status. Message is set to retained because there may be a long period of time between light switch events:
+ .TP 0.2i
+ \(bu
+-mosquitto_pub -r -t switches/kitchen_lights/status -m "on"
++mosquitto_pub \-r \-t switches/kitchen_lights/status \-m "on"
+ .PP
+ Send the contents of a file in two ways:
+ .TP 0.2i
+ \(bu
+-mosquitto_pub -t my/topic -f ./data
++mosquitto_pub \-t my/topic \-f ./data
+ .TP 0.2i
+ \(bu
+-mosquitto_pub -t my/topic -s < ./data
++mosquitto_pub \-t my/topic \-s < ./data
+ .PP
+ Send parsed electricity usage data from a Current Cost meter, reading from stdin with one line/reading as one message:
+ .TP 0.2i
+ \(bu
+-read_cc128.pl | mosquitto_pub -t sensors/cc128 -l
++read_cc128.pl | mosquitto_pub \-t sensors/cc128 \-l
+ .SH BUGS
+ \fBmosquitto_pub\fR bug information can be found at http://launchpad.net/mosquitto.
+ .SH "SEE ALSO"
+Index: mosquitto-0.9/man/mosquitto_sub.1
+===================================================================
+--- mosquitto-0.9.orig/man/mosquitto_sub.1	2010-11-29 22:44:16.157538001 +0000
++++ mosquitto-0.9/man/mosquitto_sub.1	2010-11-29 22:44:18.000000000 +0000
+@@ -66,7 +66,7 @@
+ Provide a password to be used for authenticating with
+ the broker. Using this argument without also specifying a
+ username is invalid. This requires a broker that supports
+-MQTT v3.1. See also the --username option.
++MQTT v3.1. See also the \-\-username option.
+ .TP 
+ \*(T<\fB\-q\fR\*(T>, \*(T<\fB\-\-qos\fR\*(T>
+ Specify the quality of service desired for the
+@@ -87,7 +87,7 @@
+ \*(T<\fB\-u\fR\*(T>, \*(T<\fB\-\-username\fR\*(T>
+ Provide a username to be used for authenticating with
+ the broker. This requires a broker that supports MQTT v3.1.
+-See also the --pw argument.
++See also the \-\-pw argument.
+ .TP 
+ \*(T<\fB\-v\fR\*(T>, \*(T<\fB\-\-verbose\fR\*(T>
+ Print received messages verbosely. With this
+@@ -98,16 +98,16 @@
+ \*(T<\fB\-\-will\-payload\fR\*(T>
+ Specify a message that will be stored by the broker
+ and sent out if this client disconnects unexpectedly. This
+-must be used in conjunction with --will-topic.
++must be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-qos\fR\*(T>
+ The QoS to use for the Will. Defaults to 0. This must
+-be used in conjunction with --will-topic.
++be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-retain\fR\*(T>
+ If given, if the client disconnects unexpectedly the
+ message sent out will be treated as a retained message.
+-This must be used in conjunction with --will-topic.
++This must be used in conjunction with \-\-will\-topic.
+ .TP 
+ \*(T<\fB\-\-will\-topic\fR\*(T>
+ The topic on which to send a Will, in the event that
+@@ -118,11 +118,11 @@
+ \fBmqtt\fR(7)
+ for more information.
+ .PP
+-The minimum requirement for this is to use --will-topic to
++The minimum requirement for this is to use \-\-will\-topic to
+ specify which topic the will should be sent out on. This will result in
+ a non-retained, zero length message with QoS 0.
+ .PP
+-Use the --will-retain, -will-payload and --will-qos arguments to
++Use the \-\-will\-retain, \-\-will\-payload and \-\-will\-qos arguments to
+ modify the other will parameters.
+ .SH EXAMPLES
+ Note that these really are examples - the subscriptions will work
+@@ -132,7 +132,7 @@
+ Subscribe to temperature information on localhost with QoS 1:
+ .TP 0.2i
+ \(bu
+-mosquitto_sub -t sensors/temperature -q 1
++mosquitto_sub \-t sensors/temperature \-q 1
+ .PP
+ Subscribe to hard drive temperature updates on multiple
+ machines/hard drives. This expects each machine to be publishing its
+@@ -140,12 +140,12 @@
+ sensors/machines/HOSTNAME/temperature/HD_NAME.
+ .TP 0.2i
+ \(bu
+-mosquitto_sub -t sensors/machines/+/temperature/+
++mosquitto_sub \-t sensors/machines/+/temperature/+
+ .PP
+ Subscribe to all broker status messages:
+ .TP 0.2i
+ \(bu
+-mosquitto_sub -v -t \e$SYS/#
++mosquitto_sub \-v \-t \e$SYS/#
+ .SH BUGS
+ \fBmosquitto_sub\fR bug information can be found at
+ http://launchpad.net/mosquitto.
