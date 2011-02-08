@@ -1,5 +1,6 @@
-libwrap-inc.patch
 fix-prefix.patch
 enable-libwrap.patch
 mosquitto.conf.patch
 disable-cmake.patch
+man-hyphen-minus.patch
+changelog-name.patch
