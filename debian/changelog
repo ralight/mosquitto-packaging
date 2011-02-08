@@ -1,6 +1,5 @@
-mosquitto (0.8.2-0~ral1) testing; urgency=low
+mosquitto (0.9.2-1) unstable; urgency=low
 
-  * Unofficial package.
+  * Initial release. (Closes: #605319)
 
- -- Roger A. Light <roger@atchoo.org>  Mon, 27 Sep 2010 20:10:29 +0100
-
+ -- Roger A. Light <roger@atchoo.org>  Tue, 8 Feb 2011 23:21:51 +0000

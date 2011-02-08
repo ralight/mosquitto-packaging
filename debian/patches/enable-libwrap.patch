@@ -1,7 +1,9 @@
+Description: Enable compile-time support for tcp-wrappers.
+Author: Roger Light <roger@atchoo.org>
 Index: mosquitto-0.9/config.h
 ===================================================================
---- mosquitto-0.9.orig/config.h	2010-11-14 23:49:23.268854000 +0000
-+++ mosquitto-0.9/config.h	2010-11-14 23:49:30.020854001 +0000
+--- mosquitto-0.9.orig/config.h	2010-11-27 00:27:10.000000000 +0000
++++ mosquitto-0.9/config.h	2010-11-27 00:27:15.000000000 +0000
 @@ -6,7 +6,7 @@
   * ============================================================ */
  
@@ -20,14 +22,14 @@ Index: mosquitto-0.9/config.h
 +#endif
 Index: mosquitto-0.9/config.mk
 ===================================================================
---- mosquitto-0.9.orig/config.mk	2010-11-14 23:49:37.788854000 +0000
-+++ mosquitto-0.9/config.mk	2010-11-14 23:49:44.624854001 +0000
+--- mosquitto-0.9.orig/config.mk	2010-11-27 00:27:13.000000000 +0000
++++ mosquitto-0.9/config.mk	2010-11-27 00:27:15.000000000 +0000
 @@ -5,7 +5,7 @@
  #MANCOUNTRIES=en_GB
  
  CFLAGS=-I. -I.. -ggdb -Wall -O2 -I../lib
 -LDFLAGS=-lsqlite3
-+LDFLAGS=-lsqlite3 -lwrap
++LDFLAGS=-lsqlite3 -lwrap -Wl,--as-needed
  # Add -lwrap to LDFLAGS if compiling with tcp wrappers support.
  
  CC=gcc

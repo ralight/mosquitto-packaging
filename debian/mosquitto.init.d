@@ -44,6 +44,11 @@ case "$1" in
 	fi
 	;;
 
+
+  reload|force-reload)
+	log_daemon_msg "Reloading configuration not supported" "mosquitto"
+	;;
+
   restart)
 	log_daemon_msg "Restarting Mosquitto message broker" "mosquitto"
 	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/mosquitto.pid
@@ -91,7 +96,7 @@ case "$1" in
 	;;
 
   *)
-	log_action_msg "Usage: /etc/init.d/mosquitto {start|stop|restart|try-restart|status}"
+	log_action_msg "Usage: /etc/init.d/mosquitto {start|stop|reload|force-reload|restart|try-restart|status}"
 	exit 1
 esac
 

@@ -1,68 +1,91 @@
 Source: mosquitto
 Section: net
 Priority: optional
-Maintainer: Roger Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
+Maintainer: Roger A. Light <roger@atchoo.org>
+Build-Depends: debhelper (>= 7), libsqlite3-dev, libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
 Standards-Version: 3.9.1
 Homepage: http://mosquitto.org/
+Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
+Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
 
 Package: mosquitto
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10)
-Recommends: mosquitto-clients
 Description: MQTT version 3 compatible message broker
  This is a message broker that supports version 3 of the MQ Telemetry Transport
- protocol. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
+ protocol.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
 
 Package: libmosquitto0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: MQTT version 3.1 client library
- This is a library that provides a means of implementing MQTT version 3.1
- clients. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
+ This is a C library for implementing MQTT version 3.1 clients.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
 
 Package: libmosquitto0-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3.1 client library, development files
- This is a library that provides a means of implementing MQTT version 3.1
- clients. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
+ This is the header and man page for the libmosquitto0 C library, which is a
+ library for implementing MQTT version 3.1 clients. This package is needed to do
+ development with libmosquitto0.
 
 Package: libmosquittopp0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3.1 client C++ library
- This is a library that provides a means of implementing MQTT version 3.1
- clients. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
+ This is a C++ library for implementing MQTT version 3.1 clients.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
 
 Package: libmosquittopp0-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
 Description: MQTT version 3.1 client C++ library, development files
- This is a library that provides a means of implementing MQTT version 3.1
- clients. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
+ This is the header and man page for the libmosquittopp0 C++ library, which is
+ a library for implementing MQTT version 3.1 clients. This package is needed to
+ do development with libmosquittopp0.
 
 Package: mosquitto-clients
 Architecture: any
-Recommends: mosquitto
 Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
-Description: MQTT version 3.1 clients
- This is two MQTT version 3.1 clients. The first can publish messages to a
- broker, the second can subscribe to multiple topics on a broker.
+Description: Mosquitto command line MQTT clients
+ This is two MQTT version 3.1 command line clients. mosquitto_pub can be used
+ to publish messages to a broker and mosquitto_sub can be used to subscribe to
+ a topic to receive messages.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
 
 Package: python-mosquitto
 Section: python
 Architecture: any
 Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
 Description: MQTT version 3.1 client library, python bindings
- This is a library that provides a means of implementing MQTT version 3.1
- clients. MQTT provides a lightweight method of carrying out messaging using a
- publish/subscribe model.
-
+ This is a Python module for implementing MQTT version 3.1 clients.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
