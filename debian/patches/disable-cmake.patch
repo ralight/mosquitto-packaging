@@ -1,11 +1,10 @@
 Description: Remove CMakeLists.txt to disable automatic dh cmake building.
  The standard Makefiles do everything we want.
-Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.9/CMakeLists.txt
+Index: mosquitto-0.9.2/CMakeLists.txt
 ===================================================================
---- mosquitto-0.9.orig/CMakeLists.txt	2010-11-27 00:27:10.000000000 +0000
+--- mosquitto-0.9.2.orig/CMakeLists.txt	2011-02-08 23:40:25.485914002 +0000
 +++ /dev/null	1970-01-01 00:00:00.000000000 +0000
-@@ -1,53 +0,0 @@
+@@ -1,64 +0,0 @@
 -# This is a cmake script.
 -# It is only intended for building libmosquitto and the clients and can be
 -# used to generate Visual Studio projects, allowing them to be compiled
@@ -29,11 +28,15 @@ Index: mosquitto-0.9/CMakeLists.txt
 -
 -if (WIN32)
 -    set (BINDEST .)
+-	set (CONFDEST .)
 -    set (LIBDEST .)
+-	set (MANDEST man)
 -    set (SHAREDEST .)
 -else (WIN32)
 -    set (BINDEST bin)
+-	set (CONFDEST etc)
 -    set (LIBDEST lib${LIB_SUFFIX})
+-	set (MANDEST share/man)
 -    set (SHAREDEST share/mosquitto)
 -endif (WIN32)
 -
@@ -59,3 +62,10 @@ Index: mosquitto-0.9/CMakeLists.txt
 -add_subdirectory(lib)
 -add_subdirectory(client)
 -add_subdirectory(src)
+-add_subdirectory(man)
+-
+-# ========================================
+-# Install config file
+-# ========================================
+-
+-install(FILES mosquitto.conf DESTINATION ${CONFDEST})
