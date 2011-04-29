@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mosquitto
-PKG_VERSION:=0.9.2
+PKG_VERSION:=0.10
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
@@ -29,7 +29,7 @@ define Package/mosquitto
 endef
 
 define Package/mosquitto/description
- mosquitto is a message broker that supports version 3 of the MQ Telemetry
+ mosquitto is a message broker that supports version 3.1 of the MQ Telemetry
  Transport protocol. MQTT provides a lightweight method of carrying out
  messaging using a publish/subscribe model.
 endef
