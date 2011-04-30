@@ -4,7 +4,7 @@ Maintainer: Roger A. Light <roger@atchoo.org>
 Source: http://mosquitto.org/files/source/
 
 Files: *
-Copyright: 2009,2010 Roger A. Light <roger@atchoo.org>
+Copyright: 2009-2011 Roger A. Light <roger@atchoo.org>
 License: BSD
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:

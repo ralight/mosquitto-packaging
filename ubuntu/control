@@ -2,11 +2,11 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libsqlite3-dev, libwrap0-dev, quilt (>= 0.46-7~), python-setuptools, python-support, python (>= 2.5)
+Build-Depends: debhelper (>= 7), libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
 Standards-Version: 3.9.1
 Homepage: http://mosquitto.org/
-Vcs-Hg: http://bitbucket.org/oojah/mosquitto-pkg-debian
-Vcs-Browser: http://bitbucket.org/oojah/mosquitto-pkg-debian/src
+Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
+Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
 
 Package: mosquitto
 Architecture: any
@@ -63,25 +63,13 @@ Description: MQTT version 3.1 client C++ library, development files
  a library for implementing MQTT version 3.1 clients. This package is needed to
  do development with libmosquittopp0.
 
-Package: mosquitto-pub
+Package: mosquitto-clients
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
-Description: Mosquitto command line publish client
- This is an MQTT version 3.1 command line client that can publish messages to 
- a broker.
- .
- MQTT provides a method of carrying out messaging using a publish/subscribe
- model. It is lightweight, both in terms of bandwidth usage and ease of
- implementation. This makes it particularly useful at the edge of the network
- where a sensor or other simple device may be implemented using an arduino for
- example.
-
-Package: mosquitto-sub
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
-Description: Mosquitto command line subscribe client
- This is an MQTT version 3.1 command line client that can subscribe to an MQTT
- broker on multiple topics.
+Description: Mosquitto command line MQTT clients
+ This is two MQTT version 3.1 command line clients. mosquitto_pub can be used
+ to publish messages to a broker and mosquitto_sub can be used to subscribe to
+ a topic to receive messages.
  .
  MQTT provides a method of carrying out messaging using a publish/subscribe
  model. It is lightweight, both in terms of bandwidth usage and ease of

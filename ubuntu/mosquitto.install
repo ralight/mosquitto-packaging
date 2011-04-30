@@ -1,5 +1,7 @@
 usr/sbin/mosquitto
 etc/mosquitto/mosquitto.conf
+etc/mosquitto/pwfile.example
+etc/mosquitto/aclfile.example
 usr/share/man/man8/mosquitto.8
 usr/share/man/man5/mosquitto.conf.5
 usr/share/man/man7/mqtt.7
