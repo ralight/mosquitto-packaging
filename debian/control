@@ -2,7 +2,7 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
+Build-Depends: debhelper (>= 7), sysvinit-utils, libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
 Standards-Version: 3.9.1
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
