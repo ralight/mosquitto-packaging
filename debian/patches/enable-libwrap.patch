@@ -1,9 +1,9 @@
 Description: Enable compile-time support for tcp-wrappers.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.9/config.h
+Index: mosquitto-0.10/config.h
 ===================================================================
---- mosquitto-0.9.orig/config.h	2010-11-27 00:27:10.000000000 +0000
-+++ mosquitto-0.9/config.h	2010-11-27 00:27:15.000000000 +0000
+--- mosquitto-0.10.orig/config.h	2011-04-29 22:07:10.566727001 +0100
++++ mosquitto-0.10/config.h	2011-04-29 22:07:25.706727001 +0100
 @@ -6,7 +6,7 @@
   * ============================================================ */
  
@@ -13,23 +13,16 @@ Index: mosquitto-0.9/config.h
  
  /* Compile with database upgrading support? If disabled, mosquitto won't
   * automatically upgrade old database versions. */
-@@ -56,4 +56,4 @@
- #ifdef WIN32
- #define snprintf sprintf_s
- #define strcasecmp strcmpi
--#endif
-\ No newline at end of file
-+#endif
-Index: mosquitto-0.9/config.mk
+Index: mosquitto-0.10/config.mk
 ===================================================================
---- mosquitto-0.9.orig/config.mk	2010-11-27 00:27:13.000000000 +0000
-+++ mosquitto-0.9/config.mk	2010-11-27 00:27:15.000000000 +0000
+--- mosquitto-0.10.orig/config.mk	2011-04-29 22:07:29.950727002 +0100
++++ mosquitto-0.10/config.mk	2011-04-29 22:07:36.394727002 +0100
 @@ -5,7 +5,7 @@
  #MANCOUNTRIES=en_GB
  
  CFLAGS=-I. -I.. -ggdb -Wall -O2 -I../lib
--LDFLAGS=-lsqlite3
-+LDFLAGS=-lsqlite3 -lwrap -Wl,--as-needed
+-LDFLAGS=
++LDFLAGS=-lwrap
  # Add -lwrap to LDFLAGS if compiling with tcp wrappers support.
  
  CC=gcc

@@ -1,10 +1,10 @@
 Description: Fix hyphen-used-as-minus-sign in man page.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.9/man/mosquitto.conf.5
+Index: mosquitto-0.10/man/mosquitto.conf.5
 ===================================================================
---- mosquitto-0.9.orig/man/mosquitto.conf.5	2010-11-27 06:04:23.000000000 +0000
-+++ mosquitto-0.9/man/mosquitto.conf.5	2010-11-27 06:04:31.000000000 +0000
-@@ -80,7 +80,7 @@
+--- mosquitto-0.10.orig/man/mosquitto.conf.5	2011-04-29 22:21:01.794727002 +0100
++++ mosquitto-0.10/man/mosquitto.conf.5	2011-04-29 22:21:13.406727002 +0100
+@@ -120,7 +120,7 @@
  .TP 
  \*(T<\fBmax_connections\fR\*(T>
  Limit the total number of clients connected. Set to
@@ -13,10 +13,10 @@ Index: mosquitto-0.9/man/mosquitto.conf.5
  may be imposed that are outside the control of mosquitto.
  See e.g. \fBlimits.conf\fR(5).
  .TP 
-Index: mosquitto-0.9/man/mosquitto_pub.1
+Index: mosquitto-0.10/man/mosquitto_pub.1
 ===================================================================
---- mosquitto-0.9.orig/man/mosquitto_pub.1	2010-11-29 22:44:16.225538001 +0000
-+++ mosquitto-0.9/man/mosquitto_pub.1	2010-11-29 22:47:08.381538001 +0000
+--- mosquitto-0.10.orig/man/mosquitto_pub.1	2011-04-29 22:16:10.750727001 +0100
++++ mosquitto-0.10/man/mosquitto_pub.1	2011-04-29 22:26:59.266727002 +0100
 @@ -59,7 +59,7 @@
  Provide a password to be used for authenticating with
  the broker. Using this argument without also specifying a
@@ -62,7 +62,7 @@ Index: mosquitto-0.9/man/mosquitto_pub.1
  a non-retained, zero length message with QoS 0.
  .PP
 -Use the --will-retain, -will-payload and --will-qos arguments to
-+Use the \-\-will\-retain, \-\-will\-payload and \-\-will\-qos arguments to
++Use the \-\-will\-retain, \-will\-payload and \-\-will\-qos arguments to
  modify the other will parameters.
  .SH EXAMPLES
  Publish temperature information to localhost with QoS 1:
@@ -101,10 +101,10 @@ Index: mosquitto-0.9/man/mosquitto_pub.1
  .SH BUGS
  \fBmosquitto_pub\fR bug information can be found at http://launchpad.net/mosquitto.
  .SH "SEE ALSO"
-Index: mosquitto-0.9/man/mosquitto_sub.1
+Index: mosquitto-0.10/man/mosquitto_sub.1
 ===================================================================
---- mosquitto-0.9.orig/man/mosquitto_sub.1	2010-11-29 22:44:16.157538001 +0000
-+++ mosquitto-0.9/man/mosquitto_sub.1	2010-11-29 22:44:18.000000000 +0000
+--- mosquitto-0.10.orig/man/mosquitto_sub.1	2011-04-29 22:18:41.414727001 +0100
++++ mosquitto-0.10/man/mosquitto_sub.1	2011-04-29 22:20:42.350727001 +0100
 @@ -66,7 +66,7 @@
  Provide a password to be used for authenticating with
  the broker. Using this argument without also specifying a
@@ -152,7 +152,7 @@ Index: mosquitto-0.9/man/mosquitto_sub.1
  specify which topic the will should be sent out on. This will result in
  a non-retained, zero length message with QoS 0.
  .PP
--Use the --will-retain, -will-payload and --will-qos arguments to
+-Use the --will-retain, --will-payload and --will-qos arguments to
 +Use the \-\-will\-retain, \-\-will\-payload and \-\-will\-qos arguments to
  modify the other will parameters.
  .SH EXAMPLES

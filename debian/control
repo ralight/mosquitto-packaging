@@ -2,7 +2,7 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7), libsqlite3-dev, libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
+Build-Depends: debhelper (>= 7), libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
 Standards-Version: 3.9.1
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
@@ -11,8 +11,8 @@ Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
 Package: mosquitto
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10)
-Description: MQTT version 3 compatible message broker
- This is a message broker that supports version 3 of the MQ Telemetry Transport
+Description: MQTT version 3.1 compatible message broker
+ This is a message broker that supports version 3.1 of the MQ Telemetry Transport
  protocol.
  .
  MQTT provides a method of carrying out messaging using a publish/subscribe

@@ -1,20 +1,19 @@
 Description: Remove CMakeLists.txt to disable automatic dh cmake building.
  The standard Makefiles do everything we want.
-Index: mosquitto-0.9.2/CMakeLists.txt
+Index: mosquitto-0.10/CMakeLists.txt
 ===================================================================
---- mosquitto-0.9.2.orig/CMakeLists.txt	2011-02-08 23:40:25.485914002 +0000
+--- mosquitto-0.10.orig/CMakeLists.txt	2011-04-29 22:04:41.762727001 +0100
 +++ /dev/null	1970-01-01 00:00:00.000000000 +0000
-@@ -1,64 +0,0 @@
+@@ -1,54 +0,0 @@
 -# This is a cmake script.
--# It is only intended for building libmosquitto and the clients and can be
--# used to generate Visual Studio projects, allowing them to be compiled
--# natively on Windows.
+-# It is intended to be the default means of building mosquitto, but isn't
+-# quite ready for all cases yet.
 -
 -project(mosquitto)
 -
 -cmake_minimum_required(VERSION 2.6)
 -
--set (VERSION 0.9)
+-set (VERSION 0.10)
 -
 -if (WIN32)
 -	execute_process(COMMAND echo "%DATE% %TIME%" OUTPUT_VARIABLE TIMESTAMP
@@ -24,36 +23,27 @@ Index: mosquitto-0.9.2/CMakeLists.txt
 -			OUTPUT_STRIP_TRAILING_WHITESPACE)
 -endif (WIN32)
 -
--add_definitions (-DVERSION=\"${VERSION}\" -DTIMESTAMP=\"${TIMESTAMP}\")
+-add_definitions (-DCMAKE -DVERSION=\"${VERSION}\" -DTIMESTAMP=\"${TIMESTAMP}\")
 -
 -if (WIN32)
--    set (BINDEST .)
--	set (CONFDEST .)
--    set (LIBDEST .)
--	set (MANDEST man)
+-	set (BINDIR .)
+-	set (SBINDIR .)
+-	set (SYSCONFDIR .)
+-	set (LIBDIR .)
+-	set (INCLUDEDIR include)
+-	set (DATAROOTDIR share)
+-	set (MANDIR man)
 -    set (SHAREDEST .)
 -else (WIN32)
--    set (BINDEST bin)
--	set (CONFDEST etc)
--    set (LIBDEST lib${LIB_SUFFIX})
--	set (MANDEST share/man)
--    set (SHAREDEST share/mosquitto)
+-	set (BINDIR bin)
+-	set (SBINDIR sbin)
+-	set (SYSCONFDIR etc/mosquitto)
+-	set (LIBDIR lib${LIB_SUFFIX})
+-	set (INCLUDEDIR include)
+-	set (DATAROOTDIR share)
+-	set (MANDIR ${DATAROOTDIR}/man)
+-	set (SHAREDIR ${DATAROOTDIR}/mosquitto)
 -endif (WIN32)
--
--# ========================================
--# Check for required compatibility headers
--# ========================================
--include (CheckIncludeFile)
--
--check_include_file(stdbool.h HAVE_STDBOOL_H)
--if (NOT HAVE_STDBOOL_H)
--	set (STDBOOL_H_PATH ${mosquitto_SOURCE_DIR}/compat/stdbool)
--endif (NOT HAVE_STDBOOL_H)
--
--check_include_file(stdint.h HAVE_STDINT_H)
--if (NOT HAVE_STDINT_H)
--	set (STDINT_H_PATH ${mosquitto_SOURCE_DIR}/compat/stdint)
--endif (NOT HAVE_STDINT_H)
 -
 -# ========================================
 -# Include projects
@@ -68,4 +58,4 @@ Index: mosquitto-0.9.2/CMakeLists.txt
 -# Install config file
 -# ========================================
 -
--install(FILES mosquitto.conf DESTINATION ${CONFDEST})
+-install(FILES mosquitto.conf aclfile.example pwfile.example DESTINATION ${SYSCONFDIR})
