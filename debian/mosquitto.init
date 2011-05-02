@@ -5,15 +5,18 @@
 # Required-Start:	$remote_fs $syslog
 # Required-Stop:	$remote_fs $syslog
 # Default-Start:	2 3 4 5
-# Default-Stop:		
+# Default-Stop:		0 1 6
 # Short-Description:	mosquitto MQTT v3 message broker
 ### END INIT INFO
 
 set -e
 
+PIDFILE=/var/run/mosquitto.pid
+DAEMON=/usr/sbin/mosquitto
+
 # /etc/init.d/mosquitto: start and stop the mosquitto MQTT message broker
 
-test -x /usr/sbin/mosquitto || exit 0
+test -x ${DAEMON} || exit 0
 
 umask 022
 
@@ -29,7 +32,7 @@ export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
 case "$1" in
   start)
 	log_daemon_msg "Starting Mosquitto message broker" "mosquitto"
-	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
+	if start-stop-daemon --start --quiet --oknodo --pidfile ${PIDFILE} --exec ${DAEMON} -- -d -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
 	    log_end_msg 1
@@ -37,8 +40,9 @@ case "$1" in
 	;;
   stop)
 	log_daemon_msg "Stopping Mosquitto message broker" "mosquitto"
-	if start-stop-daemon --stop --quiet --oknodo --pidfile /var/run/mosquitto.pid; then
+	if start-stop-daemon --stop --quiet --oknodo --pidfile ${PIDFILE}; then
 	    log_end_msg 0
+	    rm -f ${PIDFILE}
 	else
 	    log_end_msg 1
 	fi
@@ -51,10 +55,12 @@ case "$1" in
 
   restart)
 	log_daemon_msg "Restarting Mosquitto message broker" "mosquitto"
-	start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile /var/run/mosquitto.pid
+	if start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile ${PIDFILE}; then
+	    rm -f ${PIDFILE}
+	fi
 	check_for_no_start log_end_msg
 	check_dev_null log_end_msg
-	if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
+	if start-stop-daemon --start --quiet --oknodo --pidfile ${PIDFILE} --exec ${DAEMON} -- -d -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
 	    log_end_msg 1
@@ -64,15 +70,16 @@ case "$1" in
   try-restart)
 	log_daemon_msg "Restarting Mosquitto message broker" "mosquitto"
 	set +e
-	start-stop-daemon --stop --quiet --retry 30 --pidfile /var/run/mosquitto.pid
+	start-stop-daemon --stop --quiet --retry 30 --pidfile ${PIDFILE}
 	RET="$?"
 	set -e
 	case $RET in
 	    0)
 		# old daemon stopped
+		rm -f ${PIDFILE}
 		check_for_no_start log_end_msg
 		check_dev_null log_end_msg
-		if start-stop-daemon --start --quiet --oknodo --pidfile /var/run/mosquitto.pid --exec /usr/sbin/mosquitto -- -d -c /etc/mosquitto/mosquitto.conf ; then
+		if start-stop-daemon --start --quiet --oknodo --pidfile ${PIDFILE} --exec ${DAEMON} -- -d -c /etc/mosquitto/mosquitto.conf ; then
 		    log_end_msg 0
 		else
 		    log_end_msg 1
@@ -92,7 +99,7 @@ case "$1" in
 	;;
 
   status)
-	status_of_proc -p /var/run/mosquitto.pid /usr/sbin/mosquitto mosquitto && exit 0 || exit $?
+	status_of_proc -p ${PIDFILE} ${DAEMON} mosquitto && exit 0 || exit $?
 	;;
 
   *)
