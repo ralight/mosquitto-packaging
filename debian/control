@@ -10,7 +10,7 @@ Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
 
 Package: mosquitto
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), sysvinit-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser (>= 3.10), lsb-base (>=3.2-13)
 Description: MQTT version 3.1 compatible message broker
  This is a message broker that supports version 3.1 of the MQ Telemetry
  Transport protocol.
