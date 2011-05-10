@@ -7,8 +7,13 @@ set -e
 
 case "$1" in
 	remove|purge|deconfigure)
-		service mosquitto stop
-		echo -n
+		if [ -x /etc/init.d/mosquitto ]; then
+			if [ -x /usr/sbin/invoke-rc.d ]; then
+				invoke-rc.d mosquitto stop
+			else
+				/etc/init.d/mosquitto stop
+			fi
+		fi
 	;;
 
 	upgrade)
