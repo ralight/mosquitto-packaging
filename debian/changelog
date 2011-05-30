@@ -1,5 +1,6 @@
-mosquitto (0.10-1) unstable; urgency=low
+mosquitto (0.10.1-0~ral1) unstable; urgency=low
 
-  * Initial release. (Closes: #605319)
+  * New version
 
- -- Roger A. Light <roger@atchoo.org>  Sun, 1 May 2011 20:12:51 +0100
+ -- Roger A. Light <roger@atchoo.org>  Mon, 30 May 2011 19:40:47 +0100
+

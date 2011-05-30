@@ -1,11 +1,11 @@
 Description: Enable compile-time support for tcp-wrappers.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.10/config.h
+Index: mosquitto-0.10.1/config.h
 ===================================================================
---- mosquitto-0.10.orig/config.h	2011-04-29 22:07:10.566727001 +0100
-+++ mosquitto-0.10/config.h	2011-04-29 22:07:25.706727001 +0100
-@@ -6,7 +6,7 @@
-  * ============================================================ */
+--- mosquitto-0.10.1.orig/config.h	2011-05-30 19:46:42.000000000 +0100
++++ mosquitto-0.10.1/config.h	2011-05-30 19:46:46.000000000 +0100
+@@ -10,7 +10,7 @@
+ 
  
  /* Uncomment to compile with tcpd/libwrap support. */
 -//#define WITH_WRAP
