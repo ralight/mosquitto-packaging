@@ -58,8 +58,6 @@ case "$1" in
 	if start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile ${PIDFILE}; then
 	    rm -f ${PIDFILE}
 	fi
-	check_for_no_start log_end_msg
-	check_dev_null log_end_msg
 	if start-stop-daemon --start --quiet --oknodo --pidfile ${PIDFILE} --exec ${DAEMON} -- -d -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
@@ -77,8 +75,6 @@ case "$1" in
 	    0)
 		# old daemon stopped
 		rm -f ${PIDFILE}
-		check_for_no_start log_end_msg
-		check_dev_null log_end_msg
 		if start-stop-daemon --start --quiet --oknodo --pidfile ${PIDFILE} --exec ${DAEMON} -- -d -c /etc/mosquitto/mosquitto.conf ; then
 		    log_end_msg 0
 		else
