@@ -2,4 +2,3 @@ fix-prefix.patch
 mosquitto.conf.patch
 disable-cmake.patch
 enable-libwrap.patch
-man-hyphen-minus.patch

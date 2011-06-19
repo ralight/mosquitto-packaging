@@ -8,8 +8,8 @@ Index: mosquitto-0.10/mosquitto.conf
  # This saves information about all messages, including 
  # subscriptions, currently in-flight messages and retained 
  # messages.
--#persistence 0
-+persistence 1
+-#persistence false
++persistence true
  
  # The filename to use for the persistent database, not including 
  # the path.

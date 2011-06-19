@@ -1,5 +1,5 @@
-mosquitto (0.10-0~ppa1) karmic; urgency=low
+mosquitto (0.11-0~ppa1) lucid; urgency=low
 
   * New release.
 
- -- Roger A. Light <roger@atchoo.org>  Fri, 29 Apr 2011 21:54:51 +0100
+ -- Roger A. Light <roger@atchoo.org>  Sun, 19 Jun 2011 14:47:03 +0100

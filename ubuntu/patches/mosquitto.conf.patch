@@ -1,19 +1,19 @@
 Description: Configure sensible values for daemon.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.10/mosquitto.conf
+Index: mosquitto-0.11/mosquitto.conf
 ===================================================================
---- mosquitto-0.10.orig/mosquitto.conf	2011-04-29 22:02:35.194727002 +0100
-+++ mosquitto-0.10/mosquitto.conf	2011-04-29 22:04:07.406727002 +0100
-@@ -104,7 +104,7 @@
- # This saves information about all messages, including 
+--- mosquitto-0.11.orig/mosquitto.conf	2011-06-19 14:50:39.456682002 +0100
++++ mosquitto-0.11/mosquitto.conf	2011-06-19 14:51:02.480682005 +0100
+@@ -118,7 +118,7 @@
  # subscriptions, currently in-flight messages and retained 
  # messages.
--#persistence 0
-+persistence 1
+ # retained_persistence is a synonym for this option.
+-#persistence false
++persistence true
  
  # The filename to use for the persistent database, not including 
  # the path.
-@@ -113,7 +113,7 @@
+@@ -127,7 +127,7 @@
  # Location for persistent database. Must include trailing /
  # Default is an empty string (current directory).
  # Set to /var/lib/mosquitto/ if running as a proper service.
@@ -22,10 +22,11 @@ Index: mosquitto-0.10/mosquitto.conf
  
  # =================================================================
  # Logging
-@@ -130,6 +130,7 @@
+@@ -143,7 +143,7 @@
+ # where severity is one of D, E, W, N, I which are debug, error, 
  # warning, notice and information.
  # Use "log_dest none" if you wish to disable logging.
- #log_dest stderr
+-#log_dest stderr
 +log_dest none
  
  # Types of messages to log. Use multiple log_type lines for logging
