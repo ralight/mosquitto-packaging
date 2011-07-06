@@ -1,3 +1,10 @@
+mosquitto (0.11.2-1) unstable; urgency=low
+
+  * Fix init script start action to create pidfile so stop works correctly.
+    (thanks to Mark Hindess, closes: #632589)
+
+ -- Roger A. Light <roger@atchoo.org>  Wed, 6 July 2011 15:07:04 +0100
+
 mosquitto (0.10-1) unstable; urgency=low
 
   * Initial release. (Closes: #605319)
