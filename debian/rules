@@ -1,3 +1,9 @@
 #!/usr/bin/make -f
 %:
 	dh $@
+
+override_dh_installchangelogs:
+	dh_installchangelogs ChangeLog.txt
+
+override_dh_auto_configure:
+	# Don't process CMake rules.

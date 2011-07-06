@@ -1,4 +1,3 @@
 fix-prefix.patch
 mosquitto.conf.patch
-disable-cmake.patch
 enable-libwrap.patch
