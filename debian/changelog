@@ -3,6 +3,7 @@ mosquitto (0.11.3-1) unstable; urgency=low
   * New upstream release: http://mosquitto.org/2011/07/version-0-11-3-released/
   * Fix init script start action to create pidfile so stop works correctly.
     (thanks to Mark Hindess, closes: #632589)
+  * Fix section for client libraries in debian/control.
 
  -- Roger A. Light <roger@atchoo.org>  Wed, 6 July 2011 15:07:04 +0100
 
