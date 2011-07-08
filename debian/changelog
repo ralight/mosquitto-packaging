@@ -5,7 +5,6 @@ mosquitto (0.11.3-1) unstable; urgency=low
     (thanks to Mark Hindess, closes: #632589)
   * Fix section for client libraries in debian/control.
   * Remove disable-cmake.patch, this is handled in debian/rules now.
-  * Remove man-hyphen-minus.patch, this has been fixed by upstream.
 
  -- Roger A. Light <roger@atchoo.org>  Wed, 6 July 2011 15:07:04 +0100
 

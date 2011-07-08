@@ -1,3 +1,4 @@
 fix-prefix.patch
 mosquitto.conf.patch
 enable-libwrap.patch
+man-hyphen-minus.patch
