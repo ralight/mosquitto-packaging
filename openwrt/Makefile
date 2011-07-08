@@ -48,6 +48,7 @@ endef
 define Package/libmosquitto
     $(Package/mosquitto/default)
     TITLE+= (library for third party software)
+    # Not _actually_ required, but this is an easy way of making the menus work
     DEPENDS:=mosquitto
 endef
 
