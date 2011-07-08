@@ -10,10 +10,3 @@ diff -r 490c907277dc config.h
  
  /* Compile with the ability to upgrade from old style sqlite persistent
   * databases to the new mosquitto format. This means a dependency on sqlite. It
-@@ -33,7 +33,7 @@
-  * Not available on Windows.
-  */
- #ifndef WIN32
--#define WITH_PERSISTENCE
-+//#define WITH_PERSISTENCE
- #endif
