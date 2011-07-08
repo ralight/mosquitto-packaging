@@ -1,9 +1,9 @@
 Description: Enable compile-time support for tcp-wrappers.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.10.1/config.h
+Index: mosquitto-0.11.3/config.h
 ===================================================================
---- mosquitto-0.10.1.orig/config.h	2011-05-30 19:46:42.000000000 +0100
-+++ mosquitto-0.10.1/config.h	2011-05-30 19:46:46.000000000 +0100
+--- mosquitto-0.11.3.orig/config.h	2011-07-08 14:58:15.000000000 +0100
++++ mosquitto-0.11.3/config.h	2011-07-08 14:58:54.000000000 +0100
 @@ -10,7 +10,7 @@
  
  
@@ -13,10 +13,10 @@ Index: mosquitto-0.10.1/config.h
  
  /* Compile with database upgrading support? If disabled, mosquitto won't
   * automatically upgrade old database versions. */
-Index: mosquitto-0.10/config.mk
+Index: mosquitto-0.11.3/config.mk
 ===================================================================
---- mosquitto-0.10.orig/config.mk	2011-04-29 22:07:29.950727002 +0100
-+++ mosquitto-0.10/config.mk	2011-04-29 22:07:36.394727002 +0100
+--- mosquitto-0.11.3.orig/config.mk	2011-07-08 14:58:54.000000000 +0100
++++ mosquitto-0.11.3/config.mk	2011-07-08 14:58:54.000000000 +0100
 @@ -5,7 +5,7 @@
  #MANCOUNTRIES=en_GB
  

@@ -1,9 +1,9 @@
 Description: Configure sensible values for daemon.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.11.2/mosquitto.conf
+Index: mosquitto-0.11.3/mosquitto.conf
 ===================================================================
---- mosquitto-0.11.2.orig/mosquitto.conf	2011-07-06 15:23:39.000000000 +0100
-+++ mosquitto-0.11.2/mosquitto.conf	2011-07-06 15:24:12.000000000 +0100
+--- mosquitto-0.11.3.orig/mosquitto.conf	2011-07-08 14:58:15.000000000 +0100
++++ mosquitto-0.11.3/mosquitto.conf	2011-07-08 14:58:54.000000000 +0100
 @@ -118,7 +118,7 @@
  # subscriptions, currently in-flight messages and retained 
  # messages.
