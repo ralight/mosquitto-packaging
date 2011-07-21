@@ -29,28 +29,36 @@ define Package/mosquitto
 endef
 
 define Package/mosquitto/description
- mosquitto is a message broker that supports version 3.1 of the MQ Telemetry
- Transport protocol. MQTT provides a lightweight method of carrying out
- messaging using a publish/subscribe model.
+ mosquitto is a message broker that supports v3.1 of the MQ Telemetry
+Transport protocol. MQTT provides a lightweight method for
+messaging using a publish/subscribe model.
 endef
 
 define Package/mosquitto-client
     $(Package/mosquitto/default)
-    TITLE:= MQTT client tools
+    TITLE:= mosquitto - client tools
     DEPENDS:= +libmosquitto
 endef
 
 define Package/mosquitto-client/description
- Client tools for publishing messages to MQTT servers, and subscribing to topics.
+ Command line client tools for publishing messages to MQTT servers
+and subscribing to topics.
 endef
 
 define Package/libmosquitto
     $(Package/mosquitto/default)
-    TITLE:= mosquitto MQTT client library
+    SECTION:=libs
+    CATEGORY:=Libraries
+    TITLE:= mosquitto - client library
 endef
 
 define Package/libmosquitto/description
- Library required for client tools, and any third party software that communicates via mqtt
+ Library required for mosquitto's command line client tools, also for
+use by any third party software that wants to communicate with a 
+mosquitto server.  
+
+Should be useable for communicating with any MQTT v3.1 compatible 
+server, such as IBM's RSMB, in addition to Mosquitto
 endef
 
 
