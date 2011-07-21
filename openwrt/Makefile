@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mosquitto
-PKG_VERSION:=0.10
+PKG_VERSION:=0.11.3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://mosquitto.org/files/source/
-PKG_MD5SUM:=245be3e2ed52a8bc7d0da07584a544ab
+PKG_MD5SUM:=b322dcaf56d0d1bf8b5b657ab9aa2f06
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -21,24 +21,46 @@ define Package/mosquitto/default
   SECTION:=net
   CATEGORY:=Network
   TITLE:=mosquitto - an MQTT message broker
+  URL:=http://www.mosquitto.org/
 endef
 
 define Package/mosquitto
-  $(Package/mosquitto/default)
-  MENU:=1
+    $(Package/mosquitto/default)
 endef
 
 define Package/mosquitto/description
- mosquitto is a message broker that supports version 3.1 of the MQ Telemetry
- Transport protocol. MQTT provides a lightweight method of carrying out
- messaging using a publish/subscribe model.
+ mosquitto is a message broker that supports v3.1 of the MQ Telemetry
+Transport protocol. MQTT provides a lightweight method for
+messaging using a publish/subscribe model.
 endef
 
+define Package/mosquitto-client
+    $(Package/mosquitto/default)
+    TITLE:= mosquitto - client tools
+    DEPENDS:= +libmosquitto
+endef
 
-#define Build/Prepare
-	#mkdir -p $(PKG_BUILD_DIR)
-	#$(CP) ./src/* $(PKG_BUILD_DIR)/
-#endef
+define Package/mosquitto-client/description
+ Command line client tools for publishing messages to MQTT servers
+and subscribing to topics.
+endef
+
+define Package/libmosquitto
+    $(Package/mosquitto/default)
+    SECTION:=libs
+    CATEGORY:=Libraries
+    TITLE:= mosquitto - client library
+endef
+
+define Package/libmosquitto/description
+ Library required for mosquitto's command line client tools, also for
+use by any third party software that wants to communicate with a 
+mosquitto server.  
+
+Should be useable for communicating with any MQTT v3.1 compatible 
+server, such as IBM's RSMB, in addition to Mosquitto
+endef
+
 
 define Package/mosquitto/conffiles
 /etc/mosquitto/mosquitto.conf
@@ -51,4 +73,16 @@ define Package/mosquitto/install
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/mosquitto.conf $(1)/etc/mosquitto/mosquitto.conf
 endef
 
+define Package/mosquitto-client/install
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/client/mosquitto_pub $(1)/usr/bin/mosquitto_pub
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/client/mosquitto_sub $(1)/usr/bin/mosquitto_sub
+endef
+
+define Package/libmosquitto/install
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/lib/libmosquitto.so.0 $(1)/usr/lib/libmosquitto.so.0
+endef
 $(eval $(call BuildPackage,mosquitto))
+$(eval $(call BuildPackage,libmosquitto))
+$(eval $(call BuildPackage,mosquitto-client))
