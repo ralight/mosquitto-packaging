@@ -26,7 +26,6 @@ endef
 
 define Package/mosquitto
     $(Package/mosquitto/default)
-    MENU:=1
 endef
 
 define Package/mosquitto/description
@@ -37,19 +36,17 @@ endef
 
 define Package/mosquitto-client
     $(Package/mosquitto/default)
-    TITLE:= Command line client tools for MQTT brokers
-    DEPENDS:=libmosquitto
+    TITLE:= MQTT client tools
+    DEPENDS:= +libmosquitto
 endef
 
 define Package/mosquitto-client/description
- Client tools for publishing messages to MQTT servers, and subscribing to topics
+ Client tools for publishing messages to MQTT servers, and subscribing to topics.
 endef
 
 define Package/libmosquitto
     $(Package/mosquitto/default)
-    TITLE+= (library for third party software)
-    # Not _actually_ required, but this is an easy way of making the menus work
-    DEPENDS:=mosquitto
+    TITLE:= mosquitto MQTT client library
 endef
 
 define Package/libmosquitto/description
