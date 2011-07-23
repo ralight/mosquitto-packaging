@@ -1,4 +1,5 @@
 libmosquitto.so.0 libmosquitto0 #MINVER#
+ VERS_0.12@VERS_0.12 0.12
  VERS_0.9@VERS_0.9 0.9
  mosquitto_connect@VERS_0.9 0.9
  mosquitto_connect_callback_set@VERS_0.9 0.9
@@ -20,6 +21,7 @@ libmosquitto.so.0 libmosquitto0 #MINVER#
  mosquitto_new@VERS_0.9 0.9
  mosquitto_publish@VERS_0.9 0.9
  mosquitto_publish_callback_set@VERS_0.9 0.9
+ mosquitto_reconnect@VERS_0.12 0.12
  mosquitto_socket@VERS_0.9 0.9
  mosquitto_subscribe@VERS_0.9 0.9
  mosquitto_subscribe_callback_set@VERS_0.9 0.9

@@ -22,6 +22,7 @@ libmosquittopp.so.0 libmosquittopp0 #MINVER#
  _ZN11mosquittopp8will_setEbPKcjPKhib@Base 0.9
  _ZN11mosquittopp9loop_miscEv@Base 0.9
  _ZN11mosquittopp9loop_readEv@Base 0.9
+ _ZN11mosquittopp9reconnectEv@Base 0.12
  _ZN11mosquittopp9subscribeEPtPKci@Base 0.9
  _ZN11mosquittoppC1EPKc@Base 0.9
  _ZN11mosquittoppC2EPKc@Base 0.9
