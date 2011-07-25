@@ -1,3 +1,9 @@
+mosquitto (0.12-1) unstable; urgency=low
+
+  * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
+
+ -- Roger A. Light <roger@atchoo.org>  Mon, 25 Jul 2011 22:24:52 +0100
+
 mosquitto (0.11.3-1) unstable; urgency=low
 
   * New upstream release: http://mosquitto.org/2011/07/version-0-11-3-released/
