@@ -1,3 +1,7 @@
+*** For next upload ***
+
+  * Updated debian/copyright DEP-5 URL.
+
 mosquitto (0.12-1) unstable; urgency=low
 
   * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
