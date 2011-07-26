@@ -1,54 +1,10 @@
 Description: Fix hyphen-used-as-minus-sign in man page.
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.11.3/man/mosquitto_pub.1
+Index: mosquitto-0.12/man/mosquitto_pub.1
 ===================================================================
---- mosquitto-0.11.3.orig/man/mosquitto_pub.1	2011-07-07 12:31:55.000000000 +0100
-+++ mosquitto-0.11.3/man/mosquitto_pub.1	2011-07-08 15:24:23.000000000 +0100
-@@ -59,7 +59,7 @@
- Provide a password to be used for authenticating with
- the broker. Using this argument without also specifying a
- username is invalid. This requires a broker that supports
--MQTT v3.1. See also the --username option.
-+MQTT v3.1. See also the \-\-username option.
- .TP 
- \*(T<\fB\-q\fR\*(T>, \*(T<\fB\-\-qos\fR\*(T>
- Specify the quality of service to use for the message, from 0, 1 and 2. Defaults to 0.
-@@ -67,7 +67,7 @@
- \*(T<\fB\-\-quiet\fR\*(T>
- If this argument is given, no runtime errors will be
- printed. This excludes any error messages given in case of
--invalid user input (e.g. using --port without a
-+invalid user input (e.g. using \-\-port without a
- port).
- .TP 
- \*(T<\fB\-r\fR\*(T>, \*(T<\fB\-\-retain\fR\*(T>
-@@ -82,21 +82,21 @@
- \*(T<\fB\-u\fR\*(T>, \*(T<\fB\-\-username\fR\*(T>
- Provide a username to be used for authenticating with
- the broker. This requires a broker that supports MQTT v3.1.
--See also the --pw argument.
-+See also the \-\-pw argument.
- .TP 
- \*(T<\fB\-\-will\-payload\fR\*(T>
- Specify a message that will be stored by the broker
- and sent out if this client disconnects unexpectedly. This
--must be used in conjunction with --will-topic.
-+must be used in conjunction with \-\-will\-topic.
- .TP 
- \*(T<\fB\-\-will\-qos\fR\*(T>
- The QoS to use for the Will. Defaults to 0. This must
--be used in conjunction with --will-topic.
-+be used in conjunction with \-\-will\-topic.
- .TP 
- \*(T<\fB\-\-will\-retain\fR\*(T>
- If given, if the client disconnects unexpectedly the
- message sent out will be treated as a retained message.
--This must be used in conjunction with --will-topic.
-+This must be used in conjunction with \-\-will\-topic.
- .TP 
- \*(T<\fB\-\-will\-topic\fR\*(T>
- The topic on which to send a Will, in the event that
-@@ -107,7 +107,7 @@
+--- mosquitto-0.12.orig/man/mosquitto_pub.1	2011-07-26 09:50:53.000000000 +0100
++++ mosquitto-0.12/man/mosquitto_pub.1	2011-07-26 09:51:07.000000000 +0100
+@@ -117,7 +117,7 @@
  \fBmqtt\fR(7)
  for more information.
  .PP
@@ -57,16 +13,3 @@ Index: mosquitto-0.11.3/man/mosquitto_pub.1
  specify which topic the will should be sent out on. This will result in
  a non-retained, zero length message with QoS 0.
  .PP
-Index: mosquitto-0.11.3/man/mosquitto_sub.1
-===================================================================
---- mosquitto-0.11.3.orig/man/mosquitto_sub.1	2011-07-07 12:31:55.000000000 +0100
-+++ mosquitto-0.11.3/man/mosquitto_sub.1	2011-07-08 15:24:06.000000000 +0100
-@@ -80,7 +80,7 @@
- \*(T<\fB\-\-quiet\fR\*(T>
- If this argument is given, no runtime errors will be
- printed. This excludes any error messages given in case of
--invalid user input (e.g. using --port without a
-+invalid user input (e.g. using \-\-port without a
- port).
- .TP 
- \*(T<\fB\-t\fR\*(T>, \*(T<\fB\-\-topic\fR\*(T>
