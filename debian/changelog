@@ -1,6 +1,7 @@
 *** For next upload ***
 
   * Updated debian/copyright DEP-5 URL.
+  * Use correct format in debian/libmosquittopp0.symbols
 
 mosquitto (0.12-1) unstable; urgency=low
 
