@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mosquitto
-PKG_VERSION:=0.11.3
+PKG_VERSION:=0.12
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://mosquitto.org/files/source/
-PKG_MD5SUM:=b322dcaf56d0d1bf8b5b657ab9aa2f06
+PKG_MD5SUM:=e21ecb18dc8f9c3103fab95bbf8cffc7
 
 include $(INCLUDE_DIR)/package.mk
 
