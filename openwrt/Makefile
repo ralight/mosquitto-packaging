@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mosquitto
-PKG_VERSION:=0.11.3
+PKG_VERSION:=0.12
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://mosquitto.org/files/source/
-PKG_MD5SUM:=b322dcaf56d0d1bf8b5b657ab9aa2f06
+PKG_MD5SUM:=e21ecb18dc8f9c3103fab95bbf8cffc7
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -79,6 +79,16 @@ define Package/mosquitto-client/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/client/mosquitto_sub $(1)/usr/bin/mosquitto_sub
 endef
 
+# This installs files into ./staging_dir/. so that you can cross compile from the host
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/include
+	$(CP) $(PKG_BUILD_DIR)/lib/mosquitto.h $(1)/usr/include
+	$(INSTALL_DIR) $(1)/usr/lib
+	# This should just get symlinked, but I can't work out the magic syntax :(
+	$(CP) $(PKG_BUILD_DIR)/lib/libmosquitto.so.0 $(1)/usr/lib/libmosquitto.so
+endef
+
+# This installs files on the target.  Compare with Build/InstallDev
 define Package/libmosquitto/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/lib/libmosquitto.so.0 $(1)/usr/lib/libmosquitto.so.0
