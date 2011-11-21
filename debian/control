@@ -37,7 +37,7 @@ Description: MQTT version 3.1 client library
 Package: libmosquitto0-dev
 Section: libdevel
 Architecture: all
-Depends: ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Depends: ${misc:Depends}, libmosquitto0 (>= ${source:Version}), libmosquitto0 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client library, development files
  This is the header and man page for the libmosquitto0 C library, which is a
  library for implementing MQTT version 3.1 clients. This package is needed to do
@@ -59,7 +59,7 @@ Description: MQTT version 3.1 client C++ library
 Package: libmosquittopp0-dev
 Section: libdevel
 Architecture: all
-Depends: ${misc:Depends}, libmosquittopp0 (= ${binary:Version})
+Depends: ${misc:Depends}, libmosquittopp0 (>= ${source:Version}), libmosquittopp0 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client C++ library, development files
  This is the header and man page for the libmosquittopp0 C++ library, which is
  a library for implementing MQTT version 3.1 clients. This package is needed to
@@ -82,7 +82,7 @@ Description: Mosquitto command line MQTT clients
 Package: python-mosquitto
 Section: python
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (= ${binary:Version})
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (>= ${source:Version}), libmosquitto0 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client library, python bindings
  This is a Python module for implementing MQTT version 3.1 clients.
  .
