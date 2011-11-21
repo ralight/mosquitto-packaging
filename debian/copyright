@@ -1,11 +1,11 @@
-Format-Specification: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174&view=co
-Name: mosquitto
-Maintainer: Roger A. Light <roger@atchoo.org>
+Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=202&view=co
+Upstream-Name: mosquitto
+Upstream-Contact: Roger A. Light <roger@atchoo.org>
 Source: http://mosquitto.org/files/source/
 
 Files: *
 Copyright: 2009-2011 Roger A. Light <roger@atchoo.org>
-License: BSD
+License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
