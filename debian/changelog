@@ -1,13 +1,16 @@
-*** For next upload ***
+mosquitto (0.14.1-1) unstable; urgency=low
 
-  * Updated debian/copyright DEP-5 URL.
-  * Use correct format in debian/libmosquittopp0.symbols
+  * New upstream release: http://mosquitto.org/2011/11/version-0-14-1-released/
+  * Updated debian/copyright to latest DEP-5.
+  * Removed now unnecessary man-hyphen-minus.patch.
+
+ -- Roger A. Light <roger@atchoo.org>  Mon, 21 Nov 2011 13:42:33 +0000
 
 mosquitto (0.12-1) unstable; urgency=low
+
   * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
 
  -- Roger A. Light <roger@atchoo.org>  Mon, 25 Jul 2011 22:24:52 +0100
-
 
   * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
 
