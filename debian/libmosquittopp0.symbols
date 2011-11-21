@@ -1,33 +1,33 @@
 libmosquittopp.so.0 libmosquittopp0 #MINVER#
- (c++)"mosquittopp::disconnect()@Base" 0.9
- (c++)"mosquittopp::loop_write()@Base" 0.9
- (c++)"mosquittopp::on_connect(int)@Base" 0.9
- (c++)"mosquittopp::on_message(mosquitto_message const*)@Base" 0.9
- (c++)"mosquittopp::on_publish(unsigned short)@Base" 0.9
- (c++)"mosquittopp::lib_cleanup()@Base" 0.9
- (c++)"mosquittopp::lib_version(int*, int*, int*)@Base" 0.9
- (c++)"mosquittopp::unsubscribe(unsigned short*, char const*)@Base" 0.9
- (c++)"mosquittopp::on_subscribe(unsigned short, int, unsigned char const*)@Base" 0.9
- (c++)"mosquittopp::on_disconnect()@Base" 0.9
- (c++)"mosquittopp::on_unsubscribe(unsigned short)@Base" 0.9
- (c++)"mosquittopp::username_pw_set(char const*, char const*)@Base" 0.9
- (c++)"mosquittopp::message_retry_set(unsigned int)@Base" 0.9
- (c++)"mosquittopp::loop(int)@Base" 0.9
- (c++)"mosquittopp::socket()@Base" 0.9
- (c++)"mosquittopp::connect(char const*, int, int, bool)@Base" 0.9
- (c++)"mosquittopp::publish(unsigned short*, char const*, unsigned int, unsigned char const*, int, bool)@Base" 0.9
- (c++)"mosquittopp::lib_init()@Base" 0.9
- (c++)"mosquittopp::log_init(int, int)@Base" 0.9
- (c++)"mosquittopp::on_error()@Base" 0.9
- (c++)"mosquittopp::will_set(bool, char const*, unsigned int, unsigned char const*, int, bool)@Base" 0.9
- (c++)"mosquittopp::loop_misc()@Base" 0.9
- (c++)"mosquittopp::loop_read()@Base" 0.9
- (c++)"mosquittopp::reconnect()@Base" 0.12
- (c++)"mosquittopp::subscribe(unsigned short*, char const*, int)@Base" 0.9
- (c++)"mosquittopp::mosquittopp(char const*)@Base" 0.9
- (c++)"mosquittopp::mosquittopp(char const*)@Base" 0.9
- (c++)"mosquittopp::~mosquittopp()@Base" 0.9
- (c++)"mosquittopp::~mosquittopp()@Base" 0.9
- (c++)"typeinfo for mosquittopp@Base" 0.9
- (c++)"typeinfo name for mosquittopp@Base" 0.9
- (c++)"vtable for mosquittopp@Base" 0.9
+ _ZN11mosquittopp11mosquittopp10disconnectEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp10loop_writeEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp10on_connectEi@Base 0.13
+ _ZN11mosquittopp11mosquittopp10on_messageEPK17mosquitto_message@Base 0.13
+ _ZN11mosquittopp11mosquittopp10on_publishEt@Base 0.13
+ _ZN11mosquittopp11mosquittopp11lib_cleanupEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp11lib_versionEPiS1_S1_@Base 0.13
+ _ZN11mosquittopp11mosquittopp11unsubscribeEPtPKc@Base 0.13
+ _ZN11mosquittopp11mosquittopp12on_subscribeEtiPKh@Base 0.13
+ _ZN11mosquittopp11mosquittopp13on_disconnectEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp14on_unsubscribeEt@Base 0.13
+ _ZN11mosquittopp11mosquittopp15username_pw_setEPKcS2_@Base 0.13
+ _ZN11mosquittopp11mosquittopp17message_retry_setEj@Base 0.13
+ _ZN11mosquittopp11mosquittopp4loopEi@Base 0.13
+ _ZN11mosquittopp11mosquittopp6socketEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp7connectEPKciib@Base 0.13
+ _ZN11mosquittopp11mosquittopp7publishEPtPKcjPKhib@Base 0.13
+ _ZN11mosquittopp11mosquittopp8lib_initEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp8log_initEii@Base 0.13
+ _ZN11mosquittopp11mosquittopp8on_errorEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp8will_setEbPKcjPKhib@Base 0.13
+ _ZN11mosquittopp11mosquittopp9loop_miscEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp9loop_readEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp9reconnectEv@Base 0.13
+ _ZN11mosquittopp11mosquittopp9subscribeEPtPKci@Base 0.13
+ _ZN11mosquittopp11mosquittoppC1EPKc@Base 0.13
+ _ZN11mosquittopp11mosquittoppC2EPKc@Base 0.13
+ _ZN11mosquittopp11mosquittoppD1Ev@Base 0.13
+ _ZN11mosquittopp11mosquittoppD2Ev@Base 0.13
+ _ZTIN11mosquittopp11mosquittoppE@Base 0.13
+ _ZTSN11mosquittopp11mosquittoppE@Base 0.13
+ _ZTVN11mosquittopp11mosquittoppE@Base 0.13
