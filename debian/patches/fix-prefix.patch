@@ -1,9 +1,8 @@
 Description: Install to /usr instead of /usr/local
 Author: Roger Light <roger@atchoo.org>
-Index: mosquitto-0.11.3/client/Makefile
-===================================================================
---- mosquitto-0.11.3.orig/client/Makefile	2011-07-08 14:58:15.000000000 +0100
-+++ mosquitto-0.11.3/client/Makefile	2011-07-08 14:58:54.000000000 +0100
+Forwarded: not-needed
+--- a/client/Makefile
++++ b/client/Makefile
 @@ -2,7 +2,7 @@
  CFLAGS=-I../lib -Wall -ggdb
  LDFLAGS=-L../lib ../lib/libmosquitto.so.0
@@ -13,11 +12,9 @@ Index: mosquitto-0.11.3/client/Makefile
  
  .PHONY: all install uninstall clean
  
-Index: mosquitto-0.11.3/config.mk
-===================================================================
---- mosquitto-0.11.3.orig/config.mk	2011-07-08 14:58:15.000000000 +0100
-+++ mosquitto-0.11.3/config.mk	2011-07-08 14:58:54.000000000 +0100
-@@ -15,6 +15,6 @@
+--- a/config.mk
++++ b/config.mk
+@@ -24,6 +24,6 @@
  MSGFMT=msgfmt
  DOCBOOK2MAN=docbook2man.pl
  

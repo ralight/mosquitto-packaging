@@ -1,16 +1,12 @@
-mosquitto (0.14.1-1) unstable; urgency=low
+mosquitto (0.15-1) unstable; urgency=low
 
-  * New upstream release: http://mosquitto.org/2011/11/version-0-14-1-released/
+  * New upstream release: http://mosquitto.org/2012/02/version-0-15-released/
   * Updated debian/copyright to latest DEP-5.
   * Removed now unnecessary man-hyphen-minus.patch.
 
- -- Roger A. Light <roger@atchoo.org>  Mon, 21 Nov 2011 13:42:33 +0000
+ -- Roger A. Light <roger@atchoo.org>  Sun, 05 Feb 2012 09:30:22 +0000
 
 mosquitto (0.12-1) unstable; urgency=low
-
-  * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
-
- -- Roger A. Light <roger@atchoo.org>  Mon, 25 Jul 2011 22:24:52 +0100
 
   * New upstream release: http://mosquitto.org/2011/07/version-0-12-released/
 
