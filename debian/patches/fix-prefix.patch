@@ -3,9 +3,9 @@ Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
 --- a/client/Makefile
 +++ b/client/Makefile
-@@ -2,7 +2,7 @@
+@@ -3,7 +3,7 @@
  CFLAGS=-I../lib -Wall -ggdb
- LDFLAGS=-L../lib ../lib/libmosquitto.so.0
+ LDFLAGS=-L../lib ../lib/libmosquitto.so.${SOVERSION}
  INSTALL=install
 -prefix=/usr/local
 +prefix=/usr

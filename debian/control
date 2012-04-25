@@ -21,7 +21,7 @@ Description: MQTT version 3.1 compatible message broker
  where a sensor or other simple device may be implemented using an arduino for
  example.
 
-Package: libmosquitto0
+Package: libmosquitto1
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -34,19 +34,19 @@ Description: MQTT version 3.1 client library
  where a sensor or other simple device may be implemented using an arduino for
  example.
 
-Package: libmosquitto0-dev
+Package: libmosquitto1-dev
 Section: libdevel
 Architecture: all
-Depends: ${misc:Depends}, libmosquitto0 (>= ${source:Version}), libmosquitto0 (<< ${source:Version}.1~)
+Depends: ${misc:Depends}, libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client library, development files
- This is the header and man page for the libmosquitto0 C library, which is a
+ This is the header and man page for the libmosquitto1 C library, which is a
  library for implementing MQTT version 3.1 clients. This package is needed to do
- development with libmosquitto0.
+ development with libmosquitto1.
 
-Package: libmosquittopp0
+Package: libmosquittopp1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto1 (= ${binary:Version})
 Description: MQTT version 3.1 client C++ library
  This is a C++ library for implementing MQTT version 3.1 clients.
  .
@@ -56,18 +56,18 @@ Description: MQTT version 3.1 client C++ library
  where a sensor or other simple device may be implemented using an arduino for
  example.
 
-Package: libmosquittopp0-dev
+Package: libmosquittopp1-dev
 Section: libdevel
 Architecture: all
-Depends: ${misc:Depends}, libmosquittopp0 (>= ${source:Version}), libmosquittopp0 (<< ${source:Version}.1~)
+Depends: ${misc:Depends}, libmosquittopp1 (>= ${source:Version}), libmosquittopp1 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client C++ library, development files
- This is the header and man page for the libmosquittopp0 C++ library, which is
+ This is the header and man page for the libmosquittopp1 C++ library, which is
  a library for implementing MQTT version 3.1 clients. This package is needed to
- do development with libmosquittopp0.
+ do development with libmosquittopp1.
 
 Package: mosquitto-clients
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto0 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libmosquitto1 (= ${binary:Version})
 Description: Mosquitto command line MQTT clients
  This is two MQTT version 3.1 command line clients. mosquitto_pub can be used
  to publish messages to a broker and mosquitto_sub can be used to subscribe to
@@ -82,7 +82,7 @@ Description: Mosquitto command line MQTT clients
 Package: python-mosquitto
 Section: python
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto0 (>= ${source:Version}), libmosquitto0 (<< ${source:Version}.1~)
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client library, python bindings
  This is a Python module for implementing MQTT version 3.1 clients.
  .
