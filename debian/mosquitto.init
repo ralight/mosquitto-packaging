@@ -59,7 +59,12 @@ case "$1" in
 
 
   reload|force-reload)
-	log_daemon_msg "Reloading configuration not supported" "mosquitto"
+	log_daemon_msg "Reloading Mosquitto message broker's configuration" "mosquitto"
+        if start-stop-daemon --stop --signal HUP --quiet --oknodo --pidfile $PIDFILE; then
+            log_end_msg 0
+        else
+            log_end_msg 1
+        fi	
 	;;
 
   restart)
