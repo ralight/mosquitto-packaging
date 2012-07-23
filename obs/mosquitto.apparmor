@@ -1,0 +1,29 @@
+# ------------------------------------------------------------------
+#
+#    This program is free software; you can redistribute it and/or
+#    modify it under the terms of version 2 of the GNU General Public
+#    License published by the Free Software Foundation.
+#
+# ------------------------------------------------------------------
+
+/usr/sbin/mosquitto {
+	#include <abstractions/base>
+
+	# Nameservice required for dropping privileges
+	#include <abstractions/nameservice>
+
+	/usr/sbin/mosquitto r,
+	/etc/mosquitto/mosquitto.conf r,
+	/var/lib/mosquitto/ r,
+	/var/lib/mosquitto/mosquitto.db rwk,
+
+	network inet stream,
+	network inet6 stream,
+	network inet dgram,
+	network inet6 dgram,
+
+	# For tcp-wrappers
+	/lib{,32,64}/libwrap.so*  rm,
+	/etc/hosts.allow r,
+	/etc/hosts.deny r,
+}
