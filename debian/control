@@ -2,7 +2,7 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7.0.50~), libwrap0-dev, python-setuptools, python-support, python (>= 2.5)
+Build-Depends: debhelper (>= 7.0.50~), libwrap0-dev, python-setuptools, python-support, python (>= 2.6)
 Standards-Version: 3.9.2
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
@@ -82,7 +82,7 @@ Description: Mosquitto command line MQTT clients
 Package: python-mosquitto
 Section: python
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.5), libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
+Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.6), libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
 Description: MQTT version 3.1 client library, python bindings
  This is a Python module for implementing MQTT version 3.1 clients.
  .
