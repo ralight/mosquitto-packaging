@@ -1,30 +1,45 @@
 libmosquitto.so.1 libmosquitto1 #MINVER#
  VERS_1.0@VERS_1.0 1.0
- mosquitto_connect@VERS_1.0 1.0
+ mosquitto_connack_string@VERS_1.0 1.0
+ mosquitto_connect_async@VERS_1.0 1.0
  mosquitto_connect_callback_set@VERS_1.0 1.0
+ mosquitto_connect@VERS_1.0 1.0
  mosquitto_destroy@VERS_1.0 1.0
- mosquitto_disconnect@VERS_1.0 1.0
  mosquitto_disconnect_callback_set@VERS_1.0 1.0
+ mosquitto_disconnect@VERS_1.0 1.0
  mosquitto_lib_cleanup@VERS_1.0 1.0
  mosquitto_lib_init@VERS_1.0 1.0
  mosquitto_lib_version@VERS_1.0 1.0
- mosquitto_log_init@VERS_1.0 1.0
- mosquitto_loop@VERS_1.0 1.0
+ mosquitto_log_callback_set@VERS_1.0 1.0
  mosquitto_loop_misc@VERS_1.0 1.0
  mosquitto_loop_read@VERS_1.0 1.0
+ mosquitto_loop_start@VERS_1.0 1.0
+ mosquitto_loop_stop@VERS_1.0 1.0
+ mosquitto_loop@VERS_1.0 1.0
  mosquitto_loop_write@VERS_1.0 1.0
  mosquitto_message_callback_set@VERS_1.0 1.0
  mosquitto_message_copy@VERS_1.0 1.0
  mosquitto_message_free@VERS_1.0 1.0
  mosquitto_message_retry_set@VERS_1.0 1.0
  mosquitto_new@VERS_1.0 1.0
- mosquitto_publish@VERS_1.0 1.0
  mosquitto_publish_callback_set@VERS_1.0 1.0
+ mosquitto_publish@VERS_1.0 1.0
  mosquitto_reconnect@VERS_1.0 1.0
+ mosquitto_reinitialise@VERS_1.0 1.0
  mosquitto_socket@VERS_1.0 1.0
- mosquitto_subscribe@VERS_1.0 1.0
+ mosquitto_strerror@VERS_1.0 1.0
  mosquitto_subscribe_callback_set@VERS_1.0 1.0
- mosquitto_unsubscribe@VERS_1.0 1.0
+ mosquitto_subscribe@VERS_1.0 1.0
+ mosquitto_sub_topic_tokenise@VERS_1.0 1.0
+ mosquitto_sub_topic_tokens_free@VERS_1.0 1.0
+ mosquitto_tls_opts_set@VERS_1.0 1.0
+ mosquitto_tls_psk_set@VERS_1.0 1.0
+ mosquitto_tls_set@VERS_1.0 1.0
+ mosquitto_topic_matches_sub@VERS_1.0 1.0
  mosquitto_unsubscribe_callback_set@VERS_1.0 1.0
+ mosquitto_unsubscribe@VERS_1.0 1.0
+ mosquitto_user_data_set@VERS_1.0 1.0
  mosquitto_username_pw_set@VERS_1.0 1.0
+ mosquitto_want_write@VERS_1.0 1.0
+ mosquitto_will_clear@VERS_1.0 1.0
  mosquitto_will_set@VERS_1.0 1.0
