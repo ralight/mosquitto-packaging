@@ -3,7 +3,7 @@ Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
 --- a/mosquitto.conf
 +++ b/mosquitto.conf
-@@ -149,7 +149,7 @@
+@@ -327,7 +327,7 @@
  # subscriptions, currently in-flight messages and retained 
  # messages.
  # retained_persistence is a synonym for this option.
@@ -12,7 +12,7 @@ Forwarded: not-needed
  
  # The filename to use for the persistent database, not including 
  # the path.
-@@ -158,7 +158,7 @@
+@@ -336,7 +336,7 @@
  # Location for persistent database. Must include trailing /
  # Default is an empty string (current directory).
  # Set to /var/lib/mosquitto/ if running as a proper service.
@@ -21,7 +21,7 @@ Forwarded: not-needed
  
  # =================================================================
  # Logging
-@@ -174,7 +174,7 @@
+@@ -352,7 +352,7 @@
  # where severity is one of D, E, W, N, I which are debug, error, 
  # warning, notice and information.
  # Use "log_dest none" if you wish to disable logging.
@@ -30,3 +30,9 @@ Forwarded: not-needed
  
  # Types of messages to log. Use multiple log_type lines for logging
  # multiple types of messages.
+@@ -645,3 +645,5 @@
+ #max_log_entries
+ #trace_level
+ #trace_output
++
++include_dir /etc/mosquitto/conf.d

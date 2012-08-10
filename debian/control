@@ -2,11 +2,13 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 7.0.50~), libwrap0-dev, python-setuptools, python-support, python (>= 2.6)
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8), libssl-dev (>=1.0.0), libwrap0-dev, python-setuptools, python (>= 2.6.6-3~), python3
+Standards-Version: 3.9.3
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
 Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.0
 
 Package: mosquitto
 Architecture: any
@@ -82,8 +84,8 @@ Description: Mosquitto command line MQTT clients
 Package: python-mosquitto
 Section: python
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python (>= 2.6), libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
-Description: MQTT version 3.1 client library, python bindings
+Depends: ${python:Depends}, ${misc:Depends}
+Description: MQTT version 3.1 Python client library
  This is a Python module for implementing MQTT version 3.1 clients.
  .
  MQTT provides a method of carrying out messaging using a publish/subscribe
@@ -91,3 +93,27 @@ Description: MQTT version 3.1 client library, python bindings
  implementation. This makes it particularly useful at the edge of the network
  where a sensor or other simple device may be implemented using an arduino for
  example.
+
+Package: python3-mosquitto
+Section: python
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: MQTT version 3.1 Python 3 client library
+ This is a Python3 module for implementing MQTT version 3.1 clients.
+ .
+ MQTT provides a method of carrying out messaging using a publish/subscribe
+ model. It is lightweight, both in terms of bandwidth usage and ease of
+ implementation. This makes it particularly useful at the edge of the network
+ where a sensor or other simple device may be implemented using an arduino for
+ example.
+
+Package: mosquitto-dbg
+Architecture: any
+Priority: extra
+Section: debug
+Depends: ${misc:Depends}, mosquitto (= ${binary:Version}) | mosquitto-clients (= ${binary:Version}) | libmosquitto1 (= ${binary:Version}) | libmosquittopp1 (= ${binary:Version})
+Description: debugging symbols for mosquitto binaries
+ This package contains debugging files used to investigate problems with
+ the binaries provided by the packages mosquitto, mosquitto-clients,
+ libmosquitto1 and libmosquittopp1.
+

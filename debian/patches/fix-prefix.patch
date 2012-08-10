@@ -1,23 +1,12 @@
 Description: Install to /usr instead of /usr/local
 Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
---- a/client/Makefile
-+++ b/client/Makefile
-@@ -3,7 +3,7 @@
- CFLAGS=-I../lib -Wall -ggdb
- LDFLAGS=-L../lib ../lib/libmosquitto.so.${SOVERSION}
- INSTALL=install
--prefix=/usr/local
-+prefix=/usr
- 
- .PHONY: all install uninstall clean
- 
 --- a/config.mk
 +++ b/config.mk
-@@ -24,6 +24,6 @@
- MSGFMT=msgfmt
- DOCBOOK2MAN=docbook2man.pl
+@@ -181,6 +181,6 @@
  
+ 
+ INSTALL?=install
 -prefix=/usr/local
 +prefix=/usr
  mandir=${prefix}/share/man
