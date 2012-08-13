@@ -23,3 +23,9 @@ override_dh_auto_install:
 	cd lib/python ; for python in $(PYTHON3); do \
 		python$$python setup.py install --install-layout=deb --root=../../debian/tmp; \
 	done
+	install -d debian/tmp/etc/mosquitto/conf.d/
+	install -m 644 debian/README-conf-d debian/tmp/etc/mosquitto/conf.d/README
+	install -d debian/tmp/etc/mosquitto/ca_certificates/
+	install -m 644 debian/README-ca_certificates debian/tmp/etc/mosquitto/ca_certificates/README
+	install -d debian/tmp/etc/mosquitto/certs/
+	install -m 644 debian/README-certs debian/tmp/etc/mosquitto/certs/README
