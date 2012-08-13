@@ -1,12 +1,12 @@
 mosquitto (1.0-1) unstable; urgency=low
 
-  * New upstream release: http://mosquitto.org/2012/...
+  * New upstream release: http://mosquitto.org/2012/08/version-1-0-released/
   * Bumped standards release to 3.9.3. No changes needed.
   * Added mosquitto-dbg package for binary debug information.
   * Added python3-mosquitto binary package.
   * Use dh_python2 (and dh_python3) instead of python-support.
 
- -- Roger A. Light <roger@atchoo.org>  Thu, 09 Aug 2012 19:58:18 +0100
+ -- Roger A. Light <roger@atchoo.org>  Tue, 14 Aug 2012 00:20:18 +0100
 
 mosquitto (0.15-1) unstable; urgency=low
 
