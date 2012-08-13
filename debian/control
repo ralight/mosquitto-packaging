@@ -97,7 +97,7 @@ Description: MQTT version 3.1 Python client library
 Package: python3-mosquitto
 Section: python
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}
+Depends: ${python3:Depends}, ${misc:Depends}
 Description: MQTT version 3.1 Python 3 client library
  This is a Python3 module for implementing MQTT version 3.1 clients.
  .
