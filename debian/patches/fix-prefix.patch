@@ -3,7 +3,7 @@ Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
 --- a/config.mk
 +++ b/config.mk
-@@ -181,6 +181,6 @@
+@@ -187,6 +187,6 @@
  
  
  INSTALL?=install

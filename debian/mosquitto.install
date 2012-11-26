@@ -1,6 +1,12 @@
 usr/sbin/mosquitto
 usr/bin/mosquitto_passwd
 etc/mosquitto/mosquitto.conf
+etc/mosquitto/aclfile.example
+etc/mosquitto/pskfile.example
+etc/mosquitto/pwfile.example
+etc/mosquitto/conf.d/README
+etc/mosquitto/ca_certificates/README
+etc/mosquitto/certs/README
 usr/share/man/man8/mosquitto.8
 usr/share/man/man1/mosquitto_passwd.1
 usr/share/man/man5/mosquitto.conf.5
