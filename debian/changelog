@@ -1,13 +1,16 @@
-mosquitto (1.0.5-1) experimental; urgency=low
+mosquitto (1.1-1) experimental; urgency=low
 
-  * New upstream release: http://mosquitto.org/2012/11/version-1-0-5-released/
-    (Closes: #685119, LP: #972389, LP: #1035328)
+  * New upstream release: http://mosquitto.org/2012/11/version-1-1-released/
+    (Closes: #685119, LP: #1035328)
   * Bumped standards release to 3.9.3. No changes needed.
   * Added mosquitto-dbg package for binary debug information.
   * Added python3-mosquitto binary package.
   * Use dh_python2 (and dh_python3) instead of python-support.
+  * Debhelper bumped to version 9 to help fix hardening-no-fortify-functions.
+  * Added upstart init script.
+  * Modified normal init script to work if upstart is used.
 
- -- Roger A. Light <roger@atchoo.org>  Sat, 03 Nov 2012 23:38:07 +0000
+ -- Roger A. Light <roger@atchoo.org>  Thu, 27 Dec 2012 23:29:02 +0000
 
 mosquitto (0.15-1) unstable; urgency=low
 

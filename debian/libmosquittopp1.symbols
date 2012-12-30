@@ -1,4 +1,5 @@
 libmosquittopp.so.1 libmosquittopp1 #MINVER#
+ (c++)"mosqpp::mosquittopp::loop_forever(int, int)@Base" 1.1
  (c++)"mosqpp::lib_cleanup()@Base" 1.0
  (c++)"mosqpp::lib_version(int*, int*, int*)@Base" 1.0
  (c++)"mosqpp::mosquittopp::disconnect()@Base" 1.0

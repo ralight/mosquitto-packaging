@@ -1,2 +1,3 @@
 libmosquitto.so.1 libmosquitto1 #MINVER#
  (symver)MOSQ_1.0 1.0
+ (symver)MOSQ_1.1 1.1
