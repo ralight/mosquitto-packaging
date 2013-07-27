@@ -27,7 +27,7 @@ Forwarded: not-needed
  	-rm -f ${DESTDIR}${prefix}/bin/mosquitto_pub
 --- a/lib/Makefile
 +++ b/lib/Makefile
-@@ -22,7 +22,7 @@
+@@ -24,7 +24,7 @@
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/lib${LIB_SUFFIX}/
@@ -38,7 +38,7 @@ Forwarded: not-needed
  	$(INSTALL) mosquitto.h ${DESTDIR}${prefix}/include/mosquitto.h
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -91,10 +91,10 @@
+@@ -100,10 +100,10 @@
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/sbin

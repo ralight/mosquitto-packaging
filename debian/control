@@ -2,8 +2,8 @@ Source: mosquitto
 Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
-Build-Depends: debhelper (>= 9), libssl-dev (>=1.0.0), libwrap0-dev, python-setuptools, python (>= 2.6.6-3~), python3
-Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 9), libssl-dev (>=1.0.0), libwrap0-dev, python-all (>= 2.6.6-3~), python3-all, uthash-dev
+Standards-Version: 3.9.4
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
 Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src
@@ -36,7 +36,7 @@ Description: MQTT version 3.1 client library
  where a sensor or other simple device may be implemented using an arduino for
  example.
 
-Package: libmosquitto1-dev
+Package: libmosquitto-dev
 Section: libdevel
 Architecture: all
 Depends: ${misc:Depends}, libmosquitto1 (>= ${source:Version}), libmosquitto1 (<< ${source:Version}.1~)
@@ -58,7 +58,7 @@ Description: MQTT version 3.1 client C++ library
  where a sensor or other simple device may be implemented using an arduino for
  example.
 
-Package: libmosquittopp1-dev
+Package: libmosquittopp-dev
 Section: libdevel
 Architecture: all
 Depends: ${misc:Depends}, libmosquittopp1 (>= ${source:Version}), libmosquittopp1 (<< ${source:Version}.1~)

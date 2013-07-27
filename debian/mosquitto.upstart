@@ -1,4 +1,4 @@
-description "Mosquitto MQTTv3 broker"
+description "Mosquitto MQTTv3.1 broker"
 author "Roger Light <roger@atchoo.org"
 
 start on net-device-up

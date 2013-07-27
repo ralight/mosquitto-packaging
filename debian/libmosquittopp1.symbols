@@ -1,5 +1,4 @@
 libmosquittopp.so.1 libmosquittopp1 #MINVER#
- (c++)"mosqpp::mosquittopp::loop_forever(int, int)@Base" 1.1
  (c++)"mosqpp::lib_cleanup()@Base" 1.0
  (c++)"mosqpp::lib_version(int*, int*, int*)@Base" 1.0
  (c++)"mosqpp::mosquittopp::disconnect()@Base" 1.0
@@ -38,6 +37,13 @@ libmosquittopp.so.1 libmosquittopp1 #MINVER#
  (c++)"mosqpp::mosquittopp::mosquittopp(char const*, bool)@Base" 1.0
  (c++)"mosqpp::mosquittopp::~mosquittopp()@Base" 1.0
  (c++)"mosqpp::mosquittopp::~mosquittopp()@Base" 1.0
+ (c++)"mosqpp::mosquittopp::loop_forever(int, int)@Base" 1.1
+ (c++)"mosqpp::mosquittopp::connect_async(char const*, int, int, char const*)@Base" 1.2
+ (c++)"mosqpp::mosquittopp::reconnect_async()@Base" 1.2
+ (c++)"mosqpp::mosquittopp::tls_insecure_set(bool)@Base" 1.2
+ (c++)"mosqpp::mosquittopp::reconnect_delay_set(unsigned int, unsigned int, bool)@Base" 1.2
+ (c++)"mosqpp::mosquittopp::max_inflight_messages_set(unsigned int)@Base" 1.2
+ (c++)"mosqpp::mosquittopp::connect(char const*, int, int, char const*)@Base" 1.2
  (c++)"mosqpp::connack_string(int)@Base" 1.0
  (c++)"mosqpp::topic_matches_sub(char const*, char const*, bool*)@Base" 1.0
  (c++)"mosqpp::sub_topic_tokenise(char const*, char***, int*)@Base" 1.0

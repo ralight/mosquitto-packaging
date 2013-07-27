@@ -1,22 +1,14 @@
 Description: Disable python makefile, this is handled by dh_python* instead.
 Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
---- a/lib/python/Makefile
-+++ b/lib/python/Makefile
-@@ -5,13 +5,13 @@
+--- a/config.mk
++++ b/config.mk
+@@ -65,7 +65,7 @@
  
- .PHONY : all clean install
+ # Build with Python module. Comment out if Python is not installed, or required
+ # Python modules are not available.
+-WITH_PYTHON:=yes
++WITH_PYTHON:=no
  
--all : mosquitto.pyc
-+all : 
- 
- install : all
--	python ./setup.py install --prefix=${prefix} --root=${DESTDIR}
-+	#python ./setup.py install --prefix=${prefix} --root=${DESTDIR}
- 
- mosquitto.pyc : mosquitto.py
--	python ./setup.py build
-+	#python ./setup.py build
- 
- clean :
- 	-rm -rf build mosquitto.pyc __pycache__
+ # =============================================================================
+ # End of user configuration

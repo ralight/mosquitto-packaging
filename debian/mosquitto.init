@@ -31,20 +31,6 @@ umask 022
 
 . /lib/lsb/init-functions
 
-# Upstart detection. If Ubuntu, then we're using upstart otherwise
-# init-functions contains the init_is_upstart() function.
-USE_UPSTART=no
-if [ -f /etc/lsb-release ]; then
-	. /etc/lsb-release
-	if [ "${DISTRIB_ID}" = "Ubuntu" ]; then
-		USE_UPSTART=yes
-	fi
-else
-	if init_is_upstart; then
-		USE_UPSTART=yes
-	fi
-fi
-
 # Are we running from init?
 run_by_init() {
     ([ "$previous" ] && [ "$runlevel" ]) || [ "$runlevel" = S ]
@@ -54,11 +40,11 @@ export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
 
 case "$1" in
   start)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/start mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
-	log_daemon_msg "Starting Mosquitto message broker" "mosquitto"
+	log_daemon_msg "Starting network daemon:" "mosquitto"
 	if start-stop-daemon --start --quiet --oknodo --background  --make-pidfile --pidfile ${PIDFILE} --exec ${DAEMON} -- -c /etc/mosquitto/mosquitto.conf ; then
 	    log_end_msg 0
 	else
@@ -66,11 +52,11 @@ case "$1" in
 	fi
 	;;
   stop)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/stop mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
-	log_daemon_msg "Stopping Mosquitto message broker" "mosquitto"
+	log_daemon_msg "Stopping network daemon:" "mosquitto"
 	if start-stop-daemon --stop --quiet --oknodo --pidfile ${PIDFILE}; then
 	    log_end_msg 0
 	    rm -f ${PIDFILE}
@@ -81,11 +67,11 @@ case "$1" in
 
 
   reload|force-reload)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/reload mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
-	log_daemon_msg "Reloading Mosquitto message broker's configuration" "mosquitto"
+	log_daemon_msg "Reloading network daemon configuration:" "mosquitto"
         if start-stop-daemon --stop --signal HUP --quiet --oknodo --pidfile $PIDFILE; then
             log_end_msg 0
         else
@@ -94,11 +80,11 @@ case "$1" in
 	;;
 
   restart)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/restart mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
-	log_daemon_msg "Restarting Mosquitto message broker" "mosquitto"
+	log_daemon_msg "Restarting network daemon:" "mosquitto"
 	if start-stop-daemon --stop --quiet --oknodo --retry 30 --pidfile ${PIDFILE}; then
 	    rm -f ${PIDFILE}
 	fi
@@ -110,9 +96,9 @@ case "$1" in
 	;;
 
   try-restart)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/restart mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
 	log_daemon_msg "Restarting Mosquitto message broker" "mosquitto"
 	set +e
@@ -143,9 +129,9 @@ case "$1" in
 	;;
 
   status)
-	if [ "${USE_UPSTART}" = "yes" ]; then
-		/sbin/status mosquitto
-		exit $?
+	if which initctl >/dev/null && initctl version | grep -q upstart
+	then
+	    exit 1
 	fi
 	status_of_proc -p ${PIDFILE} ${DAEMON} mosquitto && exit 0 || exit $?
 	;;

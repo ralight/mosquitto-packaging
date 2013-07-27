@@ -2,4 +2,6 @@ enable-libwrap.patch
 fix-prefix.patch
 nostrip.patch
 pynomake.patch
-mosquitto.conf.patch
+disable-in-tree-uthash.patch
+debian-config.patch
+test.patch
