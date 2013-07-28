@@ -3,5 +3,4 @@ fix-prefix.patch
 nostrip.patch
 pynomake.patch
 disable-in-tree-uthash.patch
-debian-config.patch
 test.patch

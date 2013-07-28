@@ -29,3 +29,4 @@ override_dh_auto_install:
 	install -m 644 debian/README-ca_certificates debian/tmp/etc/mosquitto/ca_certificates/README
 	install -d debian/tmp/etc/mosquitto/certs/
 	install -m 644 debian/README-certs debian/tmp/etc/mosquitto/certs/README
+	install -m 644 debian/mosquitto.conf debian/tmp/etc/mosquitto/mosquitto.conf
