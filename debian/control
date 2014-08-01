@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: Roger A. Light <roger@atchoo.org>
 Build-Depends: debhelper (>= 9), libc-ares-dev, libssl-dev (>=1.0.0), libwrap0-dev, python-all (>= 2.6.6-3~), python3-all, uthash-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://mosquitto.org/
 Vcs-Hg: http://bitbucket.org/oojah/mosquitto-packaging
 Vcs-Browser: http://bitbucket.org/oojah/mosquitto-packaging/src

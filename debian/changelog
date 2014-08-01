@@ -3,6 +3,7 @@ mosquitto (1.3.2-1) unstable; urgency=high
   * New upstream release: http://mosquitto.org/2014/07/version-1-3-2-released/
    (closes: #725014, #754787)
   * Add c-ares dependency.
+  * Bumped standards version to 3.9.5. No changes needed.
 
  -- Roger A. Light <roger@atchoo.org>  Mon, 14 Jul 2014 00:23:41 +0100
 
