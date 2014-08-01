@@ -4,6 +4,7 @@
 	compress
 	size 100k
 	nocreate
+	missingok
 	postrotate
 		/usr/bin/killall -HUP mosquitto
 	endscript

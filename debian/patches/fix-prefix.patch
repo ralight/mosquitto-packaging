@@ -3,7 +3,7 @@ Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
 --- a/config.mk
 +++ b/config.mk
-@@ -205,6 +205,6 @@
+@@ -213,7 +213,7 @@
  
  
  INSTALL?=install
@@ -11,3 +11,4 @@ Forwarded: not-needed
 +prefix=/usr
  mandir=${prefix}/share/man
  localedir=${prefix}/share/locale
+ STRIP?=strip

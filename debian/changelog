@@ -1,6 +1,23 @@
-mosquitto (1.2-0ppa1) precise; urgency=low
+mosquitto (1.3.2-1) unstable; urgency=high
 
-  * New upstream release: http://mosquitto.org/2013/07/version-1-2-released/
+  * New upstream release: http://mosquitto.org/2014/07/version-1-3-2-released/
+   (closes: #725014, #754787)
+  * Add c-ares dependency.
+
+ -- Roger A. Light <roger@atchoo.org>  Mon, 14 Jul 2014 00:23:41 +0100
+
+mosquitto (1.2.1-1) unstable; urgency=low
+
+  * New upstream release: http://mosquitto.org/2013/09/version-1-2-1-released/
+  * Add Replaces/Break for libmosquitto-dev and libmosquittopp-dev
+    (closes: #720637, #720638).
+
+ -- Roger A. Light <roger@atchoo.org>  Wed, 18 Sep 2013 21:36:01 +0100
+
+mosquitto (1.2-1) unstable; urgency=low
+
+  * New upstream release: http://mosquitto.org/2013/08/version-1-2-released/
+    (closes: #685119).
   * Bumped standards release to 3.9.4. No changes needed.
   * Added mosquitto-dbg package for binary debug information.
   * Added python3-mosquitto binary package.
@@ -8,7 +25,7 @@ mosquitto (1.2-0ppa1) precise; urgency=low
   * mosquitto now logs to /var/log/mosquitto/ using logrotate.
   * mosquitto local config should now be placed in /etc/mosquitto/conf.d/
 
- -- Roger A. Light <roger@atchoo.org>  Sat, 27 Jul 2013 20:57:51 +0100
+ -- Roger A. Light <roger@atchoo.org>  Wed, 07 Aug 2013 23:26:19 +0100
 
 mosquitto (0.15-1) unstable; urgency=low
 

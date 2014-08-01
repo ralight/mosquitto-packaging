@@ -17,10 +17,7 @@ override_dh_strip:
 
 override_dh_auto_install:
 	dh_auto_install
-	cd lib/python ; for python in $(PYTHON2); do \
-		python$$python setup.py install --install-layout=deb --root=../../debian/tmp; \
-	done
-	cd lib/python ; for python in $(PYTHON3); do \
+	cd lib/python ; for python in $(PYTHON2) $(PYTHON3); do \
 		python$$python setup.py install --install-layout=deb --root=../../debian/tmp; \
 	done
 	install -d debian/tmp/etc/mosquitto/conf.d/

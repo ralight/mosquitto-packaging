@@ -10,5 +10,5 @@ Forwarded: not-needed
 -WITH_PYTHON:=yes
 +WITH_PYTHON:=no
  
- # =============================================================================
- # End of user configuration
+ # Build with SRV lookup support.
+ WITH_SRV:=yes

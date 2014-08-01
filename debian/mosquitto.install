@@ -1,5 +1,6 @@
 usr/sbin/mosquitto
 usr/bin/mosquitto_passwd
+etc/mosquitto/mosquitto.conf
 etc/mosquitto/mosquitto.conf.example
 etc/mosquitto/conf.d/README
 etc/mosquitto/ca_certificates/README

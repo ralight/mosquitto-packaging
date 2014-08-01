@@ -7,7 +7,7 @@ Forwarded: not-needed
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/lib${LIB_SUFFIX}/
--	$(INSTALL) -s libmosquittopp.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquittopp.so.${SOVERSION}
+-	$(INSTALL) -s --strip-program=$(STRIP) libmosquittopp.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquittopp.so.${SOVERSION}
 +	$(INSTALL) libmosquittopp.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquittopp.so.${SOVERSION}
  	ln -sf libmosquittopp.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquittopp.so
  	$(INSTALL) -d ${DESTDIR}${prefix}/include/
@@ -18,8 +18,8 @@ Forwarded: not-needed
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/bin
--	$(INSTALL) -s mosquitto_pub ${DESTDIR}${prefix}/bin/mosquitto_pub
--	$(INSTALL) -s mosquitto_sub ${DESTDIR}${prefix}/bin/mosquitto_sub
+-	$(INSTALL) -s --strip-program=$(STRIP) mosquitto_pub ${DESTDIR}${prefix}/bin/mosquitto_pub
+-	$(INSTALL) -s --strip-program=$(STRIP) mosquitto_sub ${DESTDIR}${prefix}/bin/mosquitto_sub
 +	$(INSTALL) mosquitto_pub ${DESTDIR}${prefix}/bin/mosquitto_pub
 +	$(INSTALL) mosquitto_sub ${DESTDIR}${prefix}/bin/mosquitto_sub
  
@@ -27,11 +27,11 @@ Forwarded: not-needed
  	-rm -f ${DESTDIR}${prefix}/bin/mosquitto_pub
 --- a/lib/Makefile
 +++ b/lib/Makefile
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/lib${LIB_SUFFIX}/
--	$(INSTALL) -s libmosquitto.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquitto.so.${SOVERSION}
+-	$(INSTALL) -s --strip-program=$(STRIP) libmosquitto.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquitto.so.${SOVERSION}
 +	$(INSTALL) libmosquitto.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquitto.so.${SOVERSION}
  	ln -sf libmosquitto.so.${SOVERSION} ${DESTDIR}${prefix}/lib${LIB_SUFFIX}/libmosquitto.so
  	$(INSTALL) -d ${DESTDIR}${prefix}/include/
@@ -42,11 +42,11 @@ Forwarded: not-needed
  
  install : all
  	$(INSTALL) -d ${DESTDIR}$(prefix)/sbin
--	$(INSTALL) -s mosquitto ${DESTDIR}${prefix}/sbin/mosquitto
+-	$(INSTALL) -s --strip-program=$(STRIP) mosquitto ${DESTDIR}${prefix}/sbin/mosquitto
 +	$(INSTALL) mosquitto ${DESTDIR}${prefix}/sbin/mosquitto
  	$(INSTALL) mosquitto_plugin.h ${DESTDIR}${prefix}/include/mosquitto_plugin.h
  ifeq ($(WITH_TLS),yes)
--	$(INSTALL) -s mosquitto_passwd ${DESTDIR}${prefix}/bin/mosquitto_passwd
+-	$(INSTALL) -s --strip-program=$(STRIP) mosquitto_passwd ${DESTDIR}${prefix}/bin/mosquitto_passwd
 +	$(INSTALL) mosquitto_passwd ${DESTDIR}${prefix}/bin/mosquitto_passwd
  endif
  
