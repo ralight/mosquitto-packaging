@@ -1,0 +1,4 @@
+etc/mosquitto/mosquitto.conf.example
+etc/mosquitto/aclfile.example
+etc/mosquitto/pwfile.example
+etc/mosquitto/pskfile.example
