@@ -1,3 +1,4 @@
+disable-bad-test.patch
 enable-libwrap.patch
 fix-prefix.patch
 nostrip.patch

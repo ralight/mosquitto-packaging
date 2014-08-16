@@ -1,11 +1,22 @@
-mosquitto (1.3.2-1) unstable; urgency=high
+mosquitto (1.3.4-2) unstablE; urgency=low
 
-  * New upstream release: http://mosquitto.org/2014/07/version-1-3-2-released/
+  * Disable bad "fake ca" test.
+
+ -- Roger A. Light <roger@atchoo.org>  Sat, 16 Aug 2014 10:52:12 +0100
+
+mosquitto (1.3.4-1) unstable; urgency=medium
+
+  * New upstream release: http://mosquitto.org/2014/08/version-1-3-4-released/
    (closes: #725014, #754787)
-  * Add c-ares dependency.
+  * Add dependency on libuuid, c-ares.
   * Bumped standards version to 3.9.5. No changes needed.
+  * Example config files are now installed to
+    /usr/share/doc/mosquitto/examples/
+  * debian/copyright year updated.
+  * compiling.txt is no longer distributed.
+  * Updated debian/copyright with new dates.
 
- -- Roger A. Light <roger@atchoo.org>  Mon, 14 Jul 2014 00:23:41 +0100
+ -- Roger A. Light <roger@atchoo.org>  Wed, 06 Aug 2014 00:43:39 +0100
 
 mosquitto (1.2.1-1) unstable; urgency=low
 
