@@ -3,6 +3,8 @@
 PYTHON2=$(shell pyversions -vr)
 PYTHON3=$(shell py3versions -vr)
 
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
 %:
 	dh $@ --with=python2,python3
 
