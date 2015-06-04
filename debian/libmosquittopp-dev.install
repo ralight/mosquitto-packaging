@@ -1,2 +1,2 @@
 usr/include/mosquittopp.h
-usr/lib/libmosquittopp.so
+usr/lib/*/libmosquittopp.so

@@ -3,8 +3,8 @@ Author: Roger Light <roger@atchoo.org>
 Forwarded: not-needed
 --- a/config.mk
 +++ b/config.mk
-@@ -213,7 +213,7 @@
- 
+@@ -241,7 +241,7 @@
+ endif
  
  INSTALL?=install
 -prefix=/usr/local

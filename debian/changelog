@@ -1,4 +1,16 @@
-mosquitto (1.3.4-2) unstablE; urgency=low
+mosquitto (1.4.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upstream license has changed from BSD to dual EPL/EDL.
+  * Port to multiarch.
+  * Add new package mosquitto-dev for plugin development.
+  * Split debug package for multi-arch.
+  * Bump standards verson to 3.9.6. No changes needed.
+  * Remove mosquitto-python package, no longer provided by upstream.
+
+ -- Roger A. Light <roger@atchoo.org>  Thu, 04 Jun 2015 22:31:19 +0100
+
+mosquitto (1.3.4-2) unstable; urgency=low
 
   * Disable bad "fake ca" test.
 

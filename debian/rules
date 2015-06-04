@@ -6,7 +6,7 @@ PYTHON3=$(shell py3versions -vr)
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh $@ --with=python2,python3
+	dh $@
 
 override_dh_installchangelogs:
 	dh_installchangelogs ChangeLog.txt
@@ -14,14 +14,15 @@ override_dh_installchangelogs:
 override_dh_auto_configure:
 	# Don't process CMake rules.
 
+override_dh_auto_test:
+
 override_dh_strip:
-	dh_strip --dbg-package=mosquitto-dbg
+	dh_strip --dbg-package=mosquitto-dbg -Xlibmosquitto
+	dh_strip --dbg-package=libmosquitto1-dbg -Xlibmosquittopp -Xsbin/mosquitto
+	dh_strip --dbg-package=libmosquittopp1-dbg -Xlibmosquitto.so -Xsbin/mosquitto
 
 override_dh_auto_install:
 	dh_auto_install
-	cd lib/python ; for python in $(PYTHON2) $(PYTHON3); do \
-		python$$python setup.py install --install-layout=deb --root=../../debian/tmp; \
-	done
 	install -d debian/tmp/etc/mosquitto/conf.d/
 	install -m 644 debian/README-conf-d debian/tmp/etc/mosquitto/conf.d/README
 	install -d debian/tmp/etc/mosquitto/ca_certificates/
